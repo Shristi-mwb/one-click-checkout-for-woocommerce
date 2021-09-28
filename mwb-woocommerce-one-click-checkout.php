@@ -265,16 +265,7 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 		}
 
 		deactivate_plugins( plugin_basename( __FILE__ ) );
-	}
-
-	// Add admin error notice.
-	if ( is_multisite() ) {
-
-		add_action( 'network_admin_notices', 'mwocc_activation_admin_notice' );
-
-	} else {
-
-		add_action( 'admin_notices', 'mwocc_activation_admin_notice' );
+		mwocc_activation_admin_notice();
 	}
 
 	/**

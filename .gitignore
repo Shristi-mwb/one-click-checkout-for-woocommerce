@@ -14,7 +14,7 @@ gulpfile.js
 package-lock.json
 package.json
 phpcs.xml
-wp-composer.json
+wc-composer.json
 # ignore compiled files
 *.com
 *.class
