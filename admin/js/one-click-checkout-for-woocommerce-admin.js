@@ -68,8 +68,8 @@
 	 	var mwb_wocc_all_included_products_text = [];
 
     // Adding button color and button text color
-    $('#mwb_mwocc_checkout_button_back_color').wpColorPicker();
-    $('#mwb_mwocc_checkout_button_text_color').wpColorPicker();
+    $('#mwb_occfw_checkout_button_back_color').wpColorPicker();
+    $('#mwb_occfw_checkout_button_text_color').wpColorPicker();
 
     // make mulitple hidden fields.
     $('#mwb_woo_one_click_checkout_include_hidden_products').select2();

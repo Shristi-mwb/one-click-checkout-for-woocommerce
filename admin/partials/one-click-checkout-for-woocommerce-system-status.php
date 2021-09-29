@@ -7,28 +7,28 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/admin/partials
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/admin/partials
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 // Template for showing information about system status.
-global $mwocc_mwb_mwocc_obj;
-$mwocc_default_status    = $mwocc_mwb_mwocc_obj->mwocc_plug_system_status();
+global $mwocc_mwb_occfw_obj;
+$mwocc_default_status    = $mwocc_mwb_occfw_obj->mwocc_plug_system_status();
 $mwocc_wordpress_details = is_array( $mwocc_default_status['wp'] ) && ! empty( $mwocc_default_status['wp'] ) ? $mwocc_default_status['wp'] : array();
 $mwocc_php_details       = is_array( $mwocc_default_status['php'] ) && ! empty( $mwocc_default_status['php'] ) ? $mwocc_default_status['php'] : array();
 ?>
-<div class="mwb-mwocc-table-wrap">
+<div class="mwb-occfw-table-wrap">
 	<div class="mwb-col-wrap">
-		<div id="mwb-mwocc-table-inner-container" class="table-responsive mdc-data-table">
+		<div id="mwb-occfw-table-inner-container" class="table-responsive mdc-data-table">
 			<div class="mdc-data-table__table-container">
-				<table class="mwb-mwocc-table mdc-data-table__table mwb-table" id="mwb-mwocc-wp">
+				<table class="mwb-occfw-table mdc-data-table__table mwb-table" id="mwb-occfw-wp">
 					<thead>
 						<tr>
-							<th class="mdc-data-table__header-cell"><?php esc_html_e( 'WP Variables', 'mwb-woocommerce-one-click-checkout' ); ?></th>
-							<th class="mdc-data-table__header-cell"><?php esc_html_e( 'WP Values', 'mwb-woocommerce-one-click-checkout' ); ?></th>
+							<th class="mdc-data-table__header-cell"><?php esc_html_e( 'WP Variables', 'one-click-checkout-for-woocommerce' ); ?></th>
+							<th class="mdc-data-table__header-cell"><?php esc_html_e( 'WP Values', 'one-click-checkout-for-woocommerce' ); ?></th>
 						</tr>
 					</thead>
 					<tbody class="mdc-data-table__content">
@@ -48,13 +48,13 @@ $mwocc_php_details       = is_array( $mwocc_default_status['php'] ) && ! empty( 
 		</div>
 	</div>
 	<div class="mwb-col-wrap">
-		<div id="mwb-mwocc-table-inner-container" class="table-responsive mdc-data-table">
+		<div id="mwb-occfw-table-inner-container" class="table-responsive mdc-data-table">
 			<div class="mdc-data-table__table-container">
-				<table class="mwb-mwocc-table mdc-data-table__table mwb-table" id="mwb-mwocc-sys">
+				<table class="mwb-occfw-table mdc-data-table__table mwb-table" id="mwb-occfw-sys">
 					<thead>
 						<tr>
-							<th class="mdc-data-table__header-cell"><?php esc_html_e( 'System Variables', 'mwb-woocommerce-one-click-checkout' ); ?></th>
-							<th class="mdc-data-table__header-cell"><?php esc_html_e( 'System Values', 'mwb-woocommerce-one-click-checkout' ); ?></th>
+							<th class="mdc-data-table__header-cell"><?php esc_html_e( 'System Variables', 'one-click-checkout-for-woocommerce' ); ?></th>
+							<th class="mdc-data-table__header-cell"><?php esc_html_e( 'System Values', 'one-click-checkout-for-woocommerce' ); ?></th>
 						</tr>
 					</thead>
 					<tbody class="mdc-data-table__content">

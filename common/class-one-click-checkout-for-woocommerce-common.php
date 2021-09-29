@@ -5,8 +5,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/common
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/common
  */
 
 /**
@@ -14,12 +14,12 @@
  *
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the common stylesheet and JavaScript.
- * namespace mwb_woocommerce_one_click_checkout_common.
+ * namespace one_click_checkout_for_woocommerce_common.
  *
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/common
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/common
  */
-class Mwb_Woocommerce_One_Click_Checkout_Common {
+class One_Click_Checkout_For_Woocommerce_Common {
 	/**
 	 * The ID of this plugin.
 	 *
@@ -55,7 +55,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Common {
 	 * @since    1.0.0
 	 */
 	public function mwocc_common_enqueue_styles() {
-		wp_enqueue_style( $this->plugin_name . 'common', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'common/css/mwb-woocommerce-one-click-checkout-common.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name . 'common', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'common/css/one-click-checkout-for-woocommerce-common.css', array(), $this->version, 'all' );
 	}
 
 	/**
@@ -64,14 +64,14 @@ class Mwb_Woocommerce_One_Click_Checkout_Common {
 	 * @since    1.0.0
 	 */
 	public function mwocc_common_enqueue_scripts() {
-		wp_register_script( $this->plugin_name . 'common', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'common/js/mwb-woocommerce-one-click-checkout-common.js', array( 'jquery' ), $this->version, false );
+		wp_register_script( $this->plugin_name . 'common', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'common/js/one-click-checkout-for-woocommerce-common.js', array( 'jquery' ), $this->version, false );
 		wp_localize_script(
 			$this->plugin_name . 'common',
 			'mwocc_common_param',
 			array(
 				'ajaxurl'                        => admin_url( 'admin-ajax.php' ),
 				'checkoutpage_url'               => get_permalink( get_option( 'woocommerce_checkout_page_id' ) ),
-				'mwb_woo_one_click_checkout_msg' => __( 'Please Select Variation First', 'mwb-woocommerce-one-click-checkout' ),
+				'mwb_woo_one_click_checkout_msg' => __( 'Please Select Variation First', 'one-click-checkout-for-woocommerce' ),
 				'nonce'                          => wp_create_nonce( 'mwb_woo_on_click_checkout_nonce_verfy' ),
 			)
 		);

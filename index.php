@@ -7,8 +7,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce
  */
 
-esc_html_e( 'oops looks like nothing is here', 'mwb-woocommerce-one-click-checkout' );
+esc_html_e( 'oops looks like nothing is here', 'one-click-checkout-for-woocommerce' );

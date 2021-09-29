@@ -7,8 +7,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/package/rest-api/version1
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/package/rest-api/version1
  */
 
 /**
@@ -21,11 +21,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/package/rest-api/version1
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/package/rest-api/version1
  * @author     makewebbetter <webmaster@makewebbetter.com>
  */
-class Mwb_Woocommerce_One_Click_Checkout_Rest_Api {
+class One_Click_Checkout_For_Woocommerce_Rest_Api {
 
 	/**
 	 * The unique identifier of this plugin.
@@ -66,7 +66,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Rest_Api {
 	/**
 	 * Define endpoints for the plugin.
 	 *
-	 * Uses the Mwb_Woocommerce_One_Click_Checkout_Rest_Api class in order to create the endpoint
+	 * Uses the One_Click_Checkout_For_Woocommerce_Rest_Api class in order to create the endpoint
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -104,20 +104,20 @@ class Mwb_Woocommerce_One_Click_Checkout_Rest_Api {
 	 * Begins execution of api endpoint.
 	 *
 	 * @param   Array $request    All information related with the api request containing in this array.
-	 * @return  Array   $mwb_mwocc_response   return rest response to server from where the endpoint hits.
+	 * @return  Array   $mwb_occfw_response   return rest response to server from where the endpoint hits.
 	 * @since    1.0.0
 	 */
 	public function mwocc_default_callback( $request ) {
 
-		require_once MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_PATH . 'package/rest-api/version1/class-mwb-woocommerce-one-click-checkout-api-process.php';
-		$mwb_mwocc_api_obj = new Mwb_Woocommerce_One_Click_Checkout_Api_Process();
-		$mwb_mwocc_resultsdata = $mwb_mwocc_api_obj->mwocc_default_process( $request );
-		if ( is_array( $mwb_mwocc_resultsdata ) && isset( $mwb_mwocc_resultsdata['status'] ) && 200 == $mwb_mwocc_resultsdata['status'] ) {
-			unset( $mwb_mwocc_resultsdata['status'] );
-			$mwb_mwocc_response = new WP_REST_Response( $mwb_mwocc_resultsdata, 200 );
+		require_once ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_PATH . 'package/rest-api/version1/class-one-click-checkout-for-woocommerce-api-process.php';
+		$mwb_occfw_api_obj = new One_Click_Checkout_For_Woocommerce_Api_Process();
+		$mwb_occfw_resultsdata = $mwb_occfw_api_obj->mwocc_default_process( $request );
+		if ( is_array( $mwb_occfw_resultsdata ) && isset( $mwb_occfw_resultsdata['status'] ) && 200 == $mwb_occfw_resultsdata['status'] ) {
+			unset( $mwb_occfw_resultsdata['status'] );
+			$mwb_occfw_response = new WP_REST_Response( $mwb_occfw_resultsdata, 200 );
 		} else {
-			$mwb_mwocc_response = new WP_Error( $mwb_mwocc_resultsdata );
+			$mwb_occfw_response = new WP_Error( $mwb_occfw_resultsdata );
 		}
-		return $mwb_mwocc_response;
+		return $mwb_occfw_response;
 	}
 }

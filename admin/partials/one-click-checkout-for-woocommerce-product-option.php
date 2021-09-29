@@ -7,15 +7,15 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/admin/partials
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/admin/partials
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-global $mwocc_mwb_mwocc_obj;
+global $mwocc_mwb_occfw_obj;
 global $mwb_woo_one_click_checkout_products;
 global $mwb_woo_one_click_checkout_hidden_product;
 
@@ -23,7 +23,7 @@ $mwb_woo_one_click_checkout_product_settings = get_option( 'mwb_woo_one_click_ch
 
 ?>
 <!--  template file for admin settings. -->
-<form action="" method="POST" class="mwb-mwocc-gen-section-form">
+<form action="" method="POST" class="mwb-occfw-gen-section-form">
 	<input type="hidden" name="mwb_woo_one_click_checkout_product_option_nonce" value="<?php echo esc_html( wp_create_nonce( 'mwb-woo-one-click-product-nonce' ) ); ?>">
 	<div class="mwocc-secion-wrap">
 		<?php
@@ -33,7 +33,7 @@ $mwb_woo_one_click_checkout_product_settings = get_option( 'mwb_woo_one_click_ch
 		<table>
 			<tr>
 				<td>
-					<label for="mwb_woo_one_click_checkout_include_hidden_products"><?php esc_html_e( 'Include and Exclude Hidden Product', 'mwb-woocommerce-one-click-checkout' ); ?></label>
+					<label for="mwb_woo_one_click_checkout_include_hidden_products"><?php esc_html_e( 'Include and Exclude Hidden Product', 'one-click-checkout-for-woocommerce' ); ?></label>
 				</td>
 				<?php
 				if ( ! empty( $mwb_woo_one_click_checkout_all_product ) && is_array( $mwb_woo_one_click_checkout_all_product ) ) {
@@ -70,7 +70,7 @@ $mwb_woo_one_click_checkout_product_settings = get_option( 'mwb_woo_one_click_ch
 
 			<tr>
 				<td>
-					<label for="mwb_woo_one_click_checkout_include_products"><?php echo esc_html_e( 'Include Products To Show One-Click Checkout Button', 'mwb-woocommerce-one-click-checkout' ); ?></label>
+					<label for="mwb_woo_one_click_checkout_include_products"><?php echo esc_html_e( 'Include Products To Show One-Click Checkout Button', 'one-click-checkout-for-woocommerce' ); ?></label>
 				</td>
 				<?php
 				if ( ! empty( $mwb_woo_one_click_checkout_all_product ) && is_array( $mwb_woo_one_click_checkout_all_product ) ) {
@@ -107,7 +107,7 @@ $mwb_woo_one_click_checkout_product_settings = get_option( 'mwb_woo_one_click_ch
 
 			<tr>
 				<td>
-					<label for="mwb_woo_one_click_checkout_exclude_products"><?php echo esc_html_e( 'Exclude Products For Remove One-Click Checkout Button', 'mwb-woocommerce-one-click-checkout' ); ?></label>
+					<label for="mwb_woo_one_click_checkout_exclude_products"><?php echo esc_html_e( 'Exclude Products For Remove One-Click Checkout Button', 'one-click-checkout-for-woocommerce' ); ?></label>
 				</td>
 				<?php
 				if ( ! empty( $mwb_woo_one_click_checkout_all_product ) && is_array( $mwb_woo_one_click_checkout_all_product ) ) {
@@ -144,7 +144,7 @@ $mwb_woo_one_click_checkout_product_settings = get_option( 'mwb_woo_one_click_ch
 
 			<tr>
 				<td>
-					<label for="mwb_woo_one_click_checkout_product_categories"><?php echo esc_html_e( 'Select Categories For Showing One-Click Checkout Button', 'mwb-woocommerce-one-click-checkout' ); ?></label>
+					<label for="mwb_woo_one_click_checkout_product_categories"><?php echo esc_html_e( 'Select Categories For Showing One-Click Checkout Button', 'one-click-checkout-for-woocommerce' ); ?></label>
 				</td>
 				<td>
 					<select name="mwb_woo_one_click_checkout_product_settings[categories][]" id="mwb_woo_one_click_checkout_product_categories" multiple>
@@ -171,6 +171,6 @@ $mwb_woo_one_click_checkout_product_settings = get_option( 'mwb_woo_one_click_ch
 				</td>
 			</tr>
 		</table>
-		<input type="submit" name="mwb_woo_one_click_checkout_product_option_setting_submit" id="mwb_woo_one_click_checkout_product_option_setting" value="<?php esc_html_e( 'Save Changes', 'mwb-woocommerce-one-click-checkout' ); ?>">
+		<input type="submit" name="mwb_woo_one_click_checkout_product_option_setting_submit" id="mwb_woo_one_click_checkout_product_option_setting" value="<?php esc_html_e( 'Save Changes', 'one-click-checkout-for-woocommerce' ); ?>">
 	</div>
 </form>

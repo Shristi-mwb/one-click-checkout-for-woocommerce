@@ -8,8 +8,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/includes
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/includes
  */
 
 /**
@@ -19,10 +19,10 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/includes
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/includes
  */
-class Mwb_Woocommerce_One_Click_Checkout_I18n {
+class One_Click_Checkout_For_Woocommerce_I18n {
 
 
 	/**
@@ -33,7 +33,7 @@ class Mwb_Woocommerce_One_Click_Checkout_I18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'mwb-woocommerce-one-click-checkout',
+			'one-click-checkout-for-woocommerce',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);
