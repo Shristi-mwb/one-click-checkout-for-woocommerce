@@ -36,7 +36,7 @@ select#mwb_woo_one_click_checkout_cookie_method {
     font-size: 14px;
     line-height: 24px;
     letter-spacing: .3px;
-    max-width: 200px;
+    max-width: 250px;
     display: inline-block;
 }
 
@@ -51,7 +51,7 @@ select#mwb_woo_one_click_checkout_cookie_method {
 }
 
 .mwocc-secion-wrap td .select2-container {
-    min-width: 280px;
+    min-width: 320px;
 }
 
 .mwocc-secion-wrap td .select2-selection {
@@ -73,7 +73,7 @@ select#mwb_woo_one_click_checkout_cookie_method {
     font-size: 12px;
     font-weight: 200;
     letter-spacing: 0.5px;
-    margin: 25px 0 0 215px;
+    margin: 25px 0 0 265px;
     transition: box-shadow 0.3s ease;
     text-transform: uppercase;
 }
