@@ -55,7 +55,7 @@
       }
     );
 
-    $(".mwb-password-hidden").click(function () {
+    $(".mwb-password-hidden").on('click', function () {
       if ($(".mwb-form__password").attr("type") == "text") {
         $(".mwb-form__password").attr("type", "password");
       } else {
