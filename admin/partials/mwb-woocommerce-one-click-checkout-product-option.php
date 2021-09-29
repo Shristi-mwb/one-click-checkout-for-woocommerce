@@ -70,7 +70,7 @@ $mwb_woo_one_click_checkout_product_settings = get_option( 'mwb_woo_one_click_ch
 
 			<tr>
 				<td>
-					<label for="mwb_woo_one_click_checkout_include_products"><?php echo wp_kses_post( 'Include Products To Show One-Click <br/> Checkout Button', 'mwb-woocommerce-one-click-checkout' ); ?></label>
+					<label for="mwb_woo_one_click_checkout_include_products"><?php echo esc_html_e( 'Include Products To Show One-Click Checkout Button', 'mwb-woocommerce-one-click-checkout' ); ?></label>
 				</td>
 				<?php
 				if ( ! empty( $mwb_woo_one_click_checkout_all_product ) && is_array( $mwb_woo_one_click_checkout_all_product ) ) {
@@ -107,7 +107,7 @@ $mwb_woo_one_click_checkout_product_settings = get_option( 'mwb_woo_one_click_ch
 
 			<tr>
 				<td>
-					<label for="mwb_woo_one_click_checkout_exclude_products"><?php echo wp_kses_post( 'Exclude Products For Remove One-Click <br/> Checkout Button', 'mwb-woocommerce-one-click-checkout' ); ?></label>
+					<label for="mwb_woo_one_click_checkout_exclude_products"><?php echo esc_html_e( 'Exclude Products For Remove One-Click Checkout Button', 'mwb-woocommerce-one-click-checkout' ); ?></label>
 				</td>
 				<?php
 				if ( ! empty( $mwb_woo_one_click_checkout_all_product ) && is_array( $mwb_woo_one_click_checkout_all_product ) ) {
@@ -144,7 +144,7 @@ $mwb_woo_one_click_checkout_product_settings = get_option( 'mwb_woo_one_click_ch
 
 			<tr>
 				<td>
-					<label for="mwb_woo_one_click_checkout_product_categories"><?php echo wp_kses_post( 'Select Categories For Showing One-Click <br/> Checkout Button', 'mwb-woocommerce-one-click-checkout' ); ?></label>
+					<label for="mwb_woo_one_click_checkout_product_categories"><?php echo esc_html_e( 'Select Categories For Showing One-Click Checkout Button', 'mwb-woocommerce-one-click-checkout' ); ?></label>
 				</td>
 				<td>
 					<select name="mwb_woo_one_click_checkout_product_settings[categories][]" id="mwb_woo_one_click_checkout_product_categories" multiple>
