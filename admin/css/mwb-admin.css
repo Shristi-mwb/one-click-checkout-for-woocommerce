@@ -53,7 +53,7 @@
   --mdc-theme-secondary: #2196f3;
 }
 
-.makewebbetter_page_mwb_woocommerce_one_click_checkout_menu #sswpbody-content {
+.makewebbetter_page_one_click_checkout_for_woocommerce_menu #sswpbody-content {
   font-family: "NunitoSans-Regular", sans-serif;
   margin: 0;
 }
@@ -305,13 +305,13 @@ select {
   color: #2196f3 !important;
 }
 
-#mwb-mwocc-table-inner-container,
+#mwb-occfw-table-inner-container,
 #public-hooks-listing,
 #admin-hooks-listing {
   width: 100%;
 }
 
-#mwb-mwocc-table-inner-container table thead th,
+#mwb-occfw-table-inner-container table thead th,
 #public-hooks-listing table thead th,
 #admin-hooks-listing table thead th {
   font-size: 18px;
@@ -506,7 +506,7 @@ select {
 /*============================================
 =           License Section CSS          =
 =============================================*/
-.mwb-mwocc-wrap {
+.mwb-occfw-wrap {
   border-radius: 10px;
   border: 1px solid #dddddd;
   box-shadow: 0px 4px 10px #EFEFEF;
@@ -515,7 +515,7 @@ select {
   padding: 10px 20px;
 }
 
-.mwb-mwocc-wrap h2 {
+.mwb-occfw-wrap h2 {
   color: #163062;
   font-size: 24px;
   font-weight: 600;
@@ -525,33 +525,33 @@ select {
   text-align: left;
 }
 
-.mwb-mwocc-wrap .mwb_mwocc_license_text > p {
+.mwb-occfw-wrap .mwb_occfw_license_text > p {
   margin: 10px 0;
 }
 
-.mwb-mwocc-wrap .mwb_mwocc_license_text #mwb_mwocc_license_form .mwb-mwocc-form-table input#mwb_mwocc_license_key {
+.mwb-occfw-wrap .mwb_occfw_license_text #mwb_occfw_license_form .mwb-occfw-form-table input#mwb_occfw_license_key {
   width: 100%;
   transition: 0.3s ease;
   height: 50px;
   font-size: 14px;
 }
 
-.mwb-mwocc-wrap .mwb_mwocc_license_text #mwb_mwocc_license_form .mwb-mwocc-form-table input#mwb_mwocc_license_key:hover {
+.mwb-occfw-wrap .mwb_occfw_license_text #mwb_occfw_license_form .mwb-occfw-form-table input#mwb_occfw_license_key:hover {
   border-color: #000000;
 }
 
-.mwb-mwocc-wrap .mwb_mwocc_license_text #mwb_mwocc_license_form .mwb-mwocc-form-table input#mwb_mwocc_license_key:focus {
+.mwb-occfw-wrap .mwb_occfw_license_text #mwb_occfw_license_form .mwb-occfw-form-table input#mwb_occfw_license_key:focus {
   border-color: #2196f3;
   outline: none;
   box-shadow: none;
 }
 
-.mwb-mwocc-wrap .mwb_mwocc_license_text #mwb_mwocc_license_form #mwb_mwocc_license_activation_status {
+.mwb-occfw-wrap .mwb_occfw_license_text #mwb_occfw_license_form #mwb_occfw_license_activation_status {
   padding: 0 10px;
   font-weight: 600;
 }
 
-.mwb-mwocc-wrap .mwb_mwocc_license_text #mwb_mwocc_license_form button {
+.mwb-occfw-wrap .mwb_occfw_license_text #mwb_occfw_license_form button {
   background-color: #163062;
   text-transform: uppercase;
   width: 100%;
@@ -562,12 +562,12 @@ select {
   font-weight: 600;
 }
 
-.mwb-mwocc-wrap .mwb_mwocc_license_text #mwb_mwocc_license_form button:hover {
+.mwb-occfw-wrap .mwb_occfw_license_text #mwb_occfw_license_form button:hover {
   color: #163062;
   background-color: #ffffff;
 }
 
-.mwb-mwocc-wrap .mwb_mwocc_license_text #mwb_mwocc_license_form button:focus {
+.mwb-occfw-wrap .mwb_occfw_license_text #mwb_occfw_license_form button:focus {
   outline: none;
   box-shadow: none;
 }

@@ -5,8 +5,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/includes
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/includes
  */
 
 /**
@@ -16,10 +16,10 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/includes
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/includes
  */
-class Mwb_Woocommerce_One_Click_Checkout_Loader {
+class One_Click_Checkout_For_Woocommerce_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

@@ -5,8 +5,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/public
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/public
  */
 
 /**
@@ -14,12 +14,12 @@
  *
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
- * namespace mwb_woocommerce_one_click_checkout_public.
+ * namespace one_click_checkout_for_woocommerce_public.
  *
- * @package    Mwb_Woocommerce_One_Click_Checkout
- * @subpackage Mwb_Woocommerce_One_Click_Checkout/public
+ * @package    One_Click_Checkout_For_Woocommerce
+ * @subpackage One_Click_Checkout_For_Woocommerce/public
  */
-class Mwb_Woocommerce_One_Click_Checkout_Public {
+class One_Click_Checkout_For_Woocommerce_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -58,7 +58,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Public {
 	 */
 	public function mwocc_public_enqueue_styles() {
 
-		wp_enqueue_style( $this->plugin_name, MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'public/css/mwb-woocommerce-one-click-checkout-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'public/css/one-click-checkout-for-woocommerce-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -69,7 +69,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Public {
 	 */
 	public function mwocc_public_enqueue_scripts() {
 
-		wp_register_script( $this->plugin_name, MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'public/js/mwb-woocommerce-one-click-checkout-public.js', array( 'jquery' ), $this->version, false );
+		wp_register_script( $this->plugin_name, ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'public/js/one-click-checkout-for-woocommerce-public.js', array( 'jquery' ), $this->version, false );
 		wp_localize_script( $this->plugin_name, 'mwocc_public_param', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 		wp_enqueue_script( $this->plugin_name );
 	}
@@ -84,9 +84,9 @@ class Mwb_Woocommerce_One_Click_Checkout_Public {
 		if ( is_shop() ) {
 
 			global $product;
-			$mwb_button_back_color                       = get_option( 'mwb_mwocc_checkout_button_back_color' );
-			$mwb_button_text_color                       = get_option( 'mwb_mwocc_checkout_button_text_color' );
-			$mwb_button_text                             = get_option( 'mwb_mwocc_checkout_button_name' );
+			$mwb_button_back_color                       = get_option( 'mwb_occfw_checkout_button_back_color' );
+			$mwb_button_text_color                       = get_option( 'mwb_occfw_checkout_button_text_color' );
+			$mwb_button_text                             = get_option( 'mwb_occfw_checkout_button_name' );
 			$mwb_woo_one_click_checkout_product_settings = get_option( 'mwb_woo_one_click_checkout_product_settings', array() );
 			$mwb_woo_product_button_allowed              = array();
 
@@ -109,7 +109,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Public {
 			if ( ! empty( $mwb_woo_product_button_allowed[0] ) && in_array( $product->get_id(), $mwb_woo_product_button_allowed[0] ) ) {
 				?>
 				<div class="mwb_woo_one_click_checkout_shop_wrapper">
-					<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_shop button alt" value="<?php if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) { echo esc_html( $mwb_button_text ); } else { esc_html_e( 'Buy Now', 'mwb-woocommerce-one-click-checkout' ); } ?>" data-productId="<?php echo esc_attr( $product->get_id() ); ?>" data-productType="<?php echo esc_attr( $product->get_type() ); ?>">
+					<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_shop button alt" value="<?php if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) { echo esc_html( $mwb_button_text ); } else { esc_html_e( 'Buy Now', 'one-click-checkout-for-woocommerce' ); } ?>" data-productId="<?php echo esc_attr( $product->get_id() ); ?>" data-productType="<?php echo esc_attr( $product->get_type() ); ?>">
 					<input type="hidden" name="mwb_woo_text_and_background_color" class="mwb_woo_text_and_background_color" data-buttonbackgroundcolor="<?php if ( isset( $mwb_button_back_color ) && ( '' != $mwb_button_back_color || null != $mwb_button_back_color ) ) { echo esc_html( $mwb_button_back_color ); } ?>" data-textcolor="<?php if( isset( $mwb_button_text_color ) && ( '' != $mwb_button_text_color || null != $mwb_button_text_color ) ) { echo esc_html( $mwb_button_text_color ); } ?>">
 				</div>
 				<?php
@@ -127,9 +127,9 @@ class Mwb_Woocommerce_One_Click_Checkout_Public {
 		if ( is_product() ) {
 
 			global $product;
-			$mwb_button_back_color                       = get_option( 'mwb_mwocc_checkout_button_back_color' );
-			$mwb_button_text_color                       = get_option( 'mwb_mwocc_checkout_button_text_color' );
-			$mwb_button_text                             = get_option( 'mwb_mwocc_checkout_button_name' );
+			$mwb_button_back_color                       = get_option( 'mwb_occfw_checkout_button_back_color' );
+			$mwb_button_text_color                       = get_option( 'mwb_occfw_checkout_button_text_color' );
+			$mwb_button_text                             = get_option( 'mwb_occfw_checkout_button_name' );
 			$mwb_woo_one_click_checkout_product_settings = get_option( 'mwb_woo_one_click_checkout_product_settings', array() );
 			$mwb_woo_product_button_allowed              = array();
 
@@ -149,7 +149,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Public {
 
 						if ( ! empty( $mwb_woo_product_button_allowed[0] ) && in_array( $product->get_id(), $mwb_woo_product_button_allowed[0] ) ) {
 							?>
-							<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_single button alt" value="<?php if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) { echo esc_html( $mwb_button_text ); } else { esc_html_e( 'Buy Now', 'mwb-woocommerce-one-click-checkout' ); } ?>" data-productId="<?php echo esc_html( $product->get_id() ); ?>" data-productType="<?php echo esc_html( $product->get_type() ); ?> ">
+							<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_single button alt" value="<?php if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) { echo esc_html( $mwb_button_text ); } else { esc_html_e( 'Buy Now', 'one-click-checkout-for-woocommerce' ); } ?>" data-productId="<?php echo esc_html( $product->get_id() ); ?>" data-productType="<?php echo esc_html( $product->get_type() ); ?> ">
 							<input type="hidden" name="mwb_woo_text_and_background_color" class="mwb_woo_text_and_background_color" data-buttonbackgroundcolor="<?php if ( isset( $mwb_button_back_color ) && ( '' != $mwb_button_back_color || null != $mwb_button_back_color ) ) { echo esc_html( $mwb_button_back_color ); } ?>" data-textcolor="<?php if( isset( $mwb_button_text_color ) && ( '' != $mwb_button_text_color || null != $mwb_button_text_color ) ) { echo esc_html( $mwb_button_text_color ); } ?>">
 							<?php
 						}
@@ -162,7 +162,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Public {
 						}
 						if ( ! empty( $mwb_woo_product_button_allowed[0] ) && in_array( $product->get_id(), $mwb_woo_product_button_allowed[0] ) ) {
 							?>
-							<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_single_variable button alt" value="<?php if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) { echo esc_html( $mwb_button_text ); } else { esc_html_e( 'Buy Now', 'mwb-woocommerce-one-click-checkout' ); } ?>" data-productId="<?php echo esc_html( $product->get_id() ); ?>" data-productType="<?php echo esc_html( $product->get_type() ); ?> ">
+							<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_single_variable button alt" value="<?php if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) { echo esc_html( $mwb_button_text ); } else { esc_html_e( 'Buy Now', 'one-click-checkout-for-woocommerce' ); } ?>" data-productId="<?php echo esc_html( $product->get_id() ); ?>" data-productType="<?php echo esc_html( $product->get_type() ); ?> ">
 							<input type="hidden" name="mwb_woo_text_and_background_color" class="mwb_woo_text_and_background_color" data-buttonbackgroundcolor="<?php if ( isset( $mwb_button_back_color ) && ( '' != $mwb_button_back_color || null != $mwb_button_back_color ) ) { echo esc_html( $mwb_button_back_color ); } ?>" data-textcolor="<?php if( isset( $mwb_button_text_color ) && ( '' != $mwb_button_text_color || null != $mwb_button_text_color ) ) { echo esc_html( $mwb_button_text_color ); } ?>">
 							<?php
 						}

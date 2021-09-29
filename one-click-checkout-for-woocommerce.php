@@ -9,16 +9,16 @@
  *
  * @link    https://makewebbetter.com/
  * @since   1.0.0
- * @package Mwb_Woocommerce_One_Click_Checkout
+ * @package One_Click_Checkout_For_Woocommerce
  *
  * @wordpress-plugin
- * Plugin Name:       MWB Woocommerce One Click Checkout
- * Plugin URI:        https://makewebbetter.com/product/mwb-woocommerce-one-click-checkout/
+ * Plugin Name:       One Click Checkout For WooCommerce
+ * Plugin URI:        https://makewebbetter.com/product/one-click-checkout-for-woocommerce/
  * Description:       This plugin will help merchant to enable one click checkout for their customers, hence increase in Sales.
  * Version:           1.0.0
  * Author:            MakeWebBetter
  * Author URI:        https://makewebbetter.com/
- * Text Domain:       mwb-woocommerce-one-click-checkout
+ * Text Domain:       one-click-checkout-for-woocommerce
  * Domain Path:       /languages
  *
  * WC Requires at least: 4.6
@@ -92,13 +92,13 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mwocc_define_mwb_woocommerce_one_click_checkout_constants() {
+	function mwocc_define_one_click_checkout_for_woocommerce_constants() {
 
-		mwocc_woocommerce_one_click_checkout_constants( 'MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_VERSION', '1.0.0' );
-		mwocc_woocommerce_one_click_checkout_constants( 'MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_PATH', plugin_dir_path( __FILE__ ) );
-		mwocc_woocommerce_one_click_checkout_constants( 'MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL', plugin_dir_url( __FILE__ ) );
-		mwocc_woocommerce_one_click_checkout_constants( 'MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_SERVER_URL', 'https://makewebbetter.com' );
-		mwocc_woocommerce_one_click_checkout_constants( 'MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_ITEM_REFERENCE', 'MWB Woocommerce One Click Checkout' );
+		mwocc_woocommerce_one_click_checkout_constants( 'ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_VERSION', '1.0.0' );
+		mwocc_woocommerce_one_click_checkout_constants( 'ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_PATH', plugin_dir_path( __FILE__ ) );
+		mwocc_woocommerce_one_click_checkout_constants( 'ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL', plugin_dir_url( __FILE__ ) );
+		mwocc_woocommerce_one_click_checkout_constants( 'ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_SERVER_URL', 'https://makewebbetter.com' );
+		mwocc_woocommerce_one_click_checkout_constants( 'ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_ITEM_REFERENCE', 'One Click Checkout For WooCommerce' );
 	}
 
 	/**
@@ -114,12 +114,12 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 			require_once ABSPATH . '/wp-admin/includes/plugin.php';
 		}
 
-		if ( is_plugin_active_for_network( 'mwb-woocommerce-one-click-checkout/mwb-woocommerce-one-click-checkout.php' ) ) {
+		if ( is_plugin_active_for_network( 'one-click-checkout-for-woocommerce/one-click-checkout-for-woocommerce.php' ) ) {
 
 			$blog_id = $new_site->blog_id;
 			switch_to_blog( $blog_id );
 
-			require_once plugin_dir_path( __FILE__ ) . 'includes/class-mwb-woocommerce-one-click-checkout-activator.php';
+			require_once plugin_dir_path( __FILE__ ) . 'includes/class-one-click-checkout-for-woocommerce-activator.php';
 			restore_current_blog();
 		}
  
@@ -143,55 +143,55 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 
 	/**
 	 * The code that runs during plugin activation.
-	 * This action is documented in includes/class-mwb-woocommerce-one-click-checkout-activator.php
+	 * This action is documented in includes/class-one-click-checkout-for-woocommerce-activator.php
 	 */
-	function mwocc_activate_mwb_woocommerce_one_click_checkout( $network_wide ) {
+	function mwocc_activate_one_click_checkout_for_woocommerce( $network_wide ) {
 
 
-		include_once plugin_dir_path( __FILE__ ) . 'includes/class-mwb-woocommerce-one-click-checkout-activator.php';
-		Mwb_Woocommerce_One_Click_Checkout_Activator::mwocc_woocommerce_one_click_checkout_activate( $network_wide );
-		$mwb_mwocc_active_plugin = get_option( 'mwb_all_plugins_active', false );
-		if ( is_array( $mwb_mwocc_active_plugin ) && ! empty( $mwb_mwocc_active_plugin ) ) {
-			$mwb_mwocc_active_plugin['mwb-woocommerce-one-click-checkout'] = array(
-				'plugin_name' => __( 'MWB Woocommerce One Click Checkout', 'mwb-woocommerce-one-click-checkout' ),
+		include_once plugin_dir_path( __FILE__ ) . 'includes/class-one-click-checkout-for-woocommerce-activator.php';
+		One_Click_Checkout_For_Woocommerce_Activator::mwocc_woocommerce_one_click_checkout_activate( $network_wide );
+		$mwb_occfw_active_plugin = get_option( 'mwb_all_plugins_active', false );
+		if ( is_array( $mwb_occfw_active_plugin ) && ! empty( $mwb_occfw_active_plugin ) ) {
+			$mwb_occfw_active_plugin['one-click-checkout-for-woocommerce'] = array(
+				'plugin_name' => __( 'One Click Checkout For WooCommerce', 'one-click-checkout-for-woocommerce' ),
 				'active' => '1',
 			);
 		} else {
-			$mwb_mwocc_active_plugin                        = array();
-			$mwb_mwocc_active_plugin['mwb-woocommerce-one-click-checkout'] = array(
-				'plugin_name' => __( 'MWB Woocommerce One Click Checkout', 'mwb-woocommerce-one-click-checkout' ),
+			$mwb_occfw_active_plugin                        = array();
+			$mwb_occfw_active_plugin['one-click-checkout-for-woocommerce'] = array(
+				'plugin_name' => __( 'One Click Checkout For WooCommerce', 'one-click-checkout-for-woocommerce' ),
 				'active' => '1',
 			);
 		}
-		update_option( 'mwb_all_plugins_active', $mwb_mwocc_active_plugin );
+		update_option( 'mwb_all_plugins_active', $mwb_occfw_active_plugin );
 	}
 
 	/**
 	 * The code that runs during plugin deactivation.
-	 * This action is documented in includes/class-mwb-woocommerce-one-click-checkout-deactivator.php
+	 * This action is documented in includes/class-one-click-checkout-for-woocommerce-deactivator.php
 	 */
-	function mwocc_deactivate_mwb_woocommerce_one_click_checkout() {
-		include_once plugin_dir_path( __FILE__ ) . 'includes/class-mwb-woocommerce-one-click-checkout-deactivator.php';
-		Mwb_Woocommerce_One_Click_Checkout_Deactivator::mwocc_woocommerce_one_click_checkout_deactivate();
-		$mwb_mwocc_deactive_plugin = get_option( 'mwb_all_plugins_active', false );
-		if ( is_array( $mwb_mwocc_deactive_plugin ) && ! empty( $mwb_mwocc_deactive_plugin ) ) {
-			foreach ( $mwb_mwocc_deactive_plugin as $mwb_mwocc_deactive_key => $mwb_mwocc_deactive ) {
-				if ( 'mwb-woocommerce-one-click-checkout' === $mwb_mwocc_deactive_key ) {
-					$mwb_mwocc_deactive_plugin[ $mwb_mwocc_deactive_key ]['active'] = '0';
+	function mwocc_deactivate_one_click_checkout_for_woocommerce() {
+		include_once plugin_dir_path( __FILE__ ) . 'includes/class-one-click-checkout-for-woocommerce-deactivator.php';
+		One_Click_Checkout_For_Woocommerce_Deactivator::mwocc_woocommerce_one_click_checkout_deactivate();
+		$mwb_occfw_deactive_plugin = get_option( 'mwb_all_plugins_active', false );
+		if ( is_array( $mwb_occfw_deactive_plugin ) && ! empty( $mwb_occfw_deactive_plugin ) ) {
+			foreach ( $mwb_occfw_deactive_plugin as $mwb_occfw_deactive_key => $mwb_occfw_deactive ) {
+				if ( 'one-click-checkout-for-woocommerce' === $mwb_occfw_deactive_key ) {
+					$mwb_occfw_deactive_plugin[ $mwb_occfw_deactive_key ]['active'] = '0';
 				}
 			}
 		}
-		update_option( 'mwb_all_plugins_active', $mwb_mwocc_deactive_plugin );
+		update_option( 'mwb_all_plugins_active', $mwb_occfw_deactive_plugin );
 	}
 
-	register_activation_hook( __FILE__, 'mwocc_activate_mwb_woocommerce_one_click_checkout' );
-	register_deactivation_hook( __FILE__, 'mwocc_deactivate_mwb_woocommerce_one_click_checkout' );
+	register_activation_hook( __FILE__, 'mwocc_activate_one_click_checkout_for_woocommerce' );
+	register_deactivation_hook( __FILE__, 'mwocc_deactivate_one_click_checkout_for_woocommerce' );
 
 	/**
 	 * The core plugin class that is used to define internationalization,
 	 * admin-specific hooks, and public-facing site hooks.
 	 */
-	require plugin_dir_path( __FILE__ ) . 'includes/class-mwb-woocommerce-one-click-checkout.php';
+	require plugin_dir_path( __FILE__ ) . 'includes/class-one-click-checkout-for-woocommerce.php';
 
 
 	/**
@@ -203,14 +203,14 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 	 *
 	 * @since 1.0.0
 	 */
-	function mwocc_run_mwb_woocommerce_one_click_checkout() {
-		mwocc_define_mwb_woocommerce_one_click_checkout_constants();
-		$mwocc_plugin_standard = new Mwb_Woocommerce_One_Click_Checkout();
-		$mwocc_plugin_standard->mwocc_run();
-		$GLOBALS['mwocc_mwb_mwocc_obj'] = $mwocc_plugin_standard;
+	function mwocc_run_one_click_checkout_for_woocommerce() {
+		mwocc_define_one_click_checkout_for_woocommerce_constants();
+		$mwocc_occfw_plugin_standard = new One_Click_Checkout_For_Woocommerce();
+		$mwocc_occfw_plugin_standard->mwocc_run();
+		$GLOBALS['mwocc_mwb_occfw_obj'] = $mwocc_occfw_plugin_standard;
 
 	}
-	mwocc_run_mwb_woocommerce_one_click_checkout();
+	mwocc_run_one_click_checkout_for_woocommerce();
 
 
 	// Add settings link on plugin page.
@@ -225,7 +225,7 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 	function mwocc_woocommerce_one_click_checkout_settings_link( $links ) {
 
 		$my_link = array(
-			'<a href="' . admin_url( 'admin.php?page=mwb_woocommerce_one_click_checkout_menu' ) . '">' . __( 'Settings', 'mwb-woocommerce-one-click-checkout' ) . '</a>',
+			'<a href="' . admin_url( 'admin.php?page=one_click_checkout_for_woocommerce_menu' ) . '">' . __( 'Settings', 'one-click-checkout-for-woocommerce' ) . '</a>',
 		);
 		return array_merge( $my_link, $links );
 	}
@@ -239,9 +239,9 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 	 */
 	function mwocc_woocommerce_one_click_checkout_custom_settings_at_plugin_tab( $links_array, $plugin_file_name ) {
 		if ( strpos( $plugin_file_name, basename( __FILE__ ) ) ) {
-			$links_array[] = '<a href="#" target="_blank"><img src="' . esc_html( MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL ) . 'admin/image/Demo.svg" class="mwb-info-img" alt="Demo image">' . __( 'Demo', 'mwb-woocommerce-one-click-checkout' ) . '</a>';
-			$links_array[] = '<a href="#" target="_blank"><img src="' . esc_html( MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL ) . 'admin/image/Documentation.svg" class="mwb-info-img" alt="documentation image">' . __( 'Documentation', 'mwb-woocommerce-one-click-checkout' ) . '</a>';
-			$links_array[] = '<a href="#" target="_blank"><img src="' . esc_html( MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL ) . 'admin/image/Support.svg" class="mwb-info-img" alt="support image">' . __( 'Support', 'mwb-woocommerce-one-click-checkout' ) . '</a>';
+			$links_array[] = '<a href="#" target="_blank"><img src="' . esc_html( ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL ) . 'admin/image/Demo.svg" class="mwb-info-img" alt="Demo image">' . __( 'Demo', 'one-click-checkout-for-woocommerce' ) . '</a>';
+			$links_array[] = '<a href="#" target="_blank"><img src="' . esc_html( ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL ) . 'admin/image/Documentation.svg" class="mwb-info-img" alt="documentation image">' . __( 'Documentation', 'one-click-checkout-for-woocommerce' ) . '</a>';
+			$links_array[] = '<a href="#" target="_blank"><img src="' . esc_html( ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL ) . 'admin/image/Support.svg" class="mwb-info-img" alt="support image">' . __( 'Support', 'one-click-checkout-for-woocommerce' ) . '</a>';
 		}
 		return $links_array;
 	}
@@ -282,7 +282,7 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 		<?php if ( 'woo_inactive' == $mwocc_plugin_activation['message'] ) : ?>
 
 			<div class="notice notice-error is-dismissible mwb-notice">
-				<p><strong><?php esc_html_e( 'WooCommerce', 'mwb-woocommerce-one-click-checkout' ); ?></strong><?php esc_html_e( ' is not activated, Please activate WooCommerce first to activate ', 'mwb-woocommerce-one-click-checkout' ); ?><strong><?php esc_html_e( 'MWB WooCommerce One Click Checkout', 'mwb-woocommerce-one-click-checkout' ); ?></strong><?php esc_html_e( '.', 'mwb-woocommerce-one-click-checkout' ); ?></p>
+				<p><strong><?php esc_html_e( 'WooCommerce', 'one-click-checkout-for-woocommerce' ); ?></strong><?php esc_html_e( ' is not activated, Please activate WooCommerce first to activate ', 'one-click-checkout-for-woocommerce' ); ?><strong><?php esc_html_e( 'One Click Checkout For WooCommerce', 'one-click-checkout-for-woocommerce' ); ?></strong><?php esc_html_e( '.', 'one-click-checkout-for-woocommerce' ); ?></p>
 			</div>
 
 			<?php

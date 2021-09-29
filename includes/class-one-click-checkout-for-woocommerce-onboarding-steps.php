@@ -5,26 +5,26 @@
  * @link       https://makewebbetter.com
  * @since      1.0.0
  *
- * @package     mwb_woocommerce_one_click_checkout
- * @subpackage  mwb_woocommerce_one_click_checkout/includes
+ * @package     one_click_checkout_for_woocommerce
+ * @subpackage  one_click_checkout_for_woocommerce/includes
  */
 
 /**
  * The Onboarding-specific functionality of the plugin admin side.
  *
- * @package     mwb_woocommerce_one_click_checkout
- * @subpackage  mwb_woocommerce_one_click_checkout/includes
+ * @package     one_click_checkout_for_woocommerce
+ * @subpackage  one_click_checkout_for_woocommerce/includes
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
-if ( class_exists( 'Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps' ) ) {
+if ( class_exists( 'One_Click_Checkout_For_Woocommerce_Onboarding_Steps' ) ) {
 	return;
 }
 /**
  * Define class and module for onboarding steps.
  */
-class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
+class One_Click_Checkout_For_Woocommerce_Onboarding_Steps {
 
 	/**
 	 * The single instance of the class.
@@ -35,68 +35,68 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 	protected static $_instance = null;
 
 	/**
-	 * Base url of hubspot api for mwb-woocommerce-one-click-checkout.
+	 * Base url of hubspot api for one-click-checkout-for-woocommerce.
 	 *
 	 * @since 1.0.0
 	 * @var string base url of API.
 	 */
-	private $mwb_mwocc_base_url = 'https://api.hsforms.com/';
+	private $mwb_occfw_base_url = 'https://api.hsforms.com/';
 
 	/**
-	 * Portal id of hubspot api for mwb-woocommerce-one-click-checkout.
+	 * Portal id of hubspot api for one-click-checkout-for-woocommerce.
 	 *
 	 * @since 1.0.0
 	 * @var string Portal id.
 	 */
-	private static $mwb_mwocc_portal_id = '6493626';
+	private static $mwb_occfw_portal_id = '6493626';
 
 	/**
-	 * Form id of hubspot api for mwb-woocommerce-one-click-checkout.
+	 * Form id of hubspot api for one-click-checkout-for-woocommerce.
 	 *
 	 * @since 1.0.0
 	 * @var string Form id.
 	 */
-	private static $mwb_mwocc_onboarding_form_id = 'd94dcb10-c9c1-4155-a9ad-35354f2c3b52';
+	private static $mwb_occfw_onboarding_form_id = 'd94dcb10-c9c1-4155-a9ad-35354f2c3b52';
 
 	/**
-	 * Form id of hubspot api for mwb-woocommerce-one-click-checkout.
+	 * Form id of hubspot api for one-click-checkout-for-woocommerce.
 	 *
 	 * @since 1.0.0
 	 * @var string Form id.
 	 */
-	private static $mwb_mwocc_deactivation_form_id = '329ffc7a-0e8c-4e11-8b41-960815c31f8d';
+	private static $mwb_occfw_deactivation_form_id = '329ffc7a-0e8c-4e11-8b41-960815c31f8d';
 
 	/**
-	 * Define some variables for mwb-woocommerce-one-click-checkout.
+	 * Define some variables for one-click-checkout-for-woocommerce.
 	 *
 	 * @since 1.0.0
-	 * @var string $mwb_mwocc_plugin_name plugin name.
+	 * @var string $mwb_occfw_plugin_name plugin name.
 	 */
-	private static $mwb_mwocc_plugin_name;
+	private static $mwb_occfw_plugin_name;
 
 	/**
-	 * Define some variables for mwb-woocommerce-one-click-checkout.
+	 * Define some variables for one-click-checkout-for-woocommerce.
 	 *
 	 * @since 1.0.0
-	 * @var string $mwb_mwocc_plugin_name_label plugin name text.
+	 * @var string $mwb_occfw_plugin_name_label plugin name text.
 	 */
-	private static $mwb_mwocc_plugin_name_label;
+	private static $mwb_occfw_plugin_name_label;
 
 	/**
-	 * Define some variables for mwb-woocommerce-one-click-checkout.
+	 * Define some variables for one-click-checkout-for-woocommerce.
 	 *
-	 * @var string $mwb_mwocc_store_name store name.
+	 * @var string $mwb_occfw_store_name store name.
 	 * @since 1.0.0
 	 */
-	private static $mwb_mwocc_store_name;
+	private static $mwb_occfw_store_name;
 
 	/**
-	 * Define some variables for mwb-woocommerce-one-click-checkout.
+	 * Define some variables for one-click-checkout-for-woocommerce.
 	 *
 	 * @since 1.0.0
-	 * @var string $mwb_mwocc_store_url store url.
+	 * @var string $mwb_occfw_store_url store url.
 	 */
-	private static $mwb_mwocc_store_url;
+	private static $mwb_occfw_store_url;
 
 	/**
 	 * Define the onboarding functionality of the plugin.
@@ -107,22 +107,22 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		self::$mwb_mwocc_store_name        = get_bloginfo( 'name' );
-		self::$mwb_mwocc_store_url         = home_url();
-		self::$mwb_mwocc_plugin_name       = 'mwb-woocommerce-one-click-checkout';
-		self::$mwb_mwocc_plugin_name_label = 'MWB STANDARD PLUGIN';
+		self::$mwb_occfw_store_name        = get_bloginfo( 'name' );
+		self::$mwb_occfw_store_url         = home_url();
+		self::$mwb_occfw_plugin_name       = 'one-click-checkout-for-woocommerce';
+		self::$mwb_occfw_plugin_name_label = 'MWB STANDARD PLUGIN';
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'mwocc_onboarding_enqueue_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'mwocc_onboarding_enqueue_scripts' ) );
 		add_action( 'admin_footer', array( $this, 'mwocc_add_onboarding_popup_screen' ) );
 		add_action( 'admin_footer', array( $this, 'mwocc_add_deactivation_popup_screen' ) );
 
-		add_filter( 'mwb_mwocc_on_boarding_form_fields', array( $this, 'mwocc_add_on_boarding_form_fields' ) );
-		add_filter( 'mwb_mwocc_deactivation_form_fields', array( $this, 'mwocc_add_deactivation_form_fields' ) );
+		add_filter( 'mwb_occfw_on_boarding_form_fields', array( $this, 'mwocc_add_on_boarding_form_fields' ) );
+		add_filter( 'mwb_occfw_deactivation_form_fields', array( $this, 'mwocc_add_deactivation_form_fields' ) );
 
 		// Ajax to send data.
-		add_action( 'wp_ajax_mwb_mwocc_send_onboarding_data', array( $this, 'mwocc_send_onboarding_data' ) );
-		add_action( 'wp_ajax_nopriv_mwb_mwocc_send_onboarding_data', array( $this, 'mwocc_send_onboarding_data' ) );
+		add_action( 'wp_ajax_mwb_occfw_send_onboarding_data', array( $this, 'mwocc_send_onboarding_data' ) );
+		add_action( 'wp_ajax_nopriv_mwb_occfw_send_onboarding_data', array( $this, 'mwocc_send_onboarding_data' ) );
 
 		// Ajax to Skip popup.
 		add_action( 'wp_ajax_mwocc_skip_onboarding_popup', array( $this, 'mwocc_skip_onboarding_popup' ) );
@@ -168,14 +168,14 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 		}
 		if ( $this->mwocc_valid_page_screen_check() || $is_valid ) {
 			// comment the line of code Only when your plugin doesn't uses the Select2.
-			wp_enqueue_style( 'mwb-mwocc-onboarding-select2-style', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'package/lib/select-2/mwb-woocommerce-one-click-checkout-select2.css', array(), time(), 'all' );
+			wp_enqueue_style( 'mwb-occfw-onboarding-select2-style', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/select-2/one-click-checkout-for-woocommerce-select2.css', array(), time(), 'all' );
 
-			wp_enqueue_style( 'mwb-mwocc-meterial-css', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'package/lib/material-design/material-components-web.min.css', array(), time(), 'all' );
-			wp_enqueue_style( 'mwb-mwocc-meterial-css2', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'package/lib/material-design/material-components-v5.0-web.min.css', array(), time(), 'all' );
-			wp_enqueue_style( 'mwb-mwocc-meterial-lite', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'package/lib/material-design/material-lite.min.css', array(), time(), 'all' );
-			wp_enqueue_style( 'mwb-mwocc-meterial-icons-css', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'package/lib/material-design/icon.css', array(), time(), 'all' );
+			wp_enqueue_style( 'mwb-occfw-meterial-css', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/material-design/material-components-web.min.css', array(), time(), 'all' );
+			wp_enqueue_style( 'mwb-occfw-meterial-css2', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/material-design/material-components-v5.0-web.min.css', array(), time(), 'all' );
+			wp_enqueue_style( 'mwb-occfw-meterial-lite', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/material-design/material-lite.min.css', array(), time(), 'all' );
+			wp_enqueue_style( 'mwb-occfw-meterial-icons-css', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/material-design/icon.css', array(), time(), 'all' );
 
-			wp_enqueue_style( 'mwb-mwocc-onboarding-style', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'onboarding/css/mwb-woocommerce-one-click-checkout-onboarding.css', array(), time(), 'all' );
+			wp_enqueue_style( 'mwb-occfw-onboarding-style', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'onboarding/css/one-click-checkout-for-woocommerce-onboarding.css', array(), time(), 'all' );
 
 		}
 	}
@@ -199,43 +199,43 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 		}
 		if ( $this->mwocc_valid_page_screen_check() || $is_valid ) {
 
-			wp_enqueue_script( 'mwb-mwocc-onboarding-select2-js', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'package/lib/select-2/mwb-woocommerce-one-click-checkout-select2.js', array( 'jquery' ), '1.0.0', false );
+			wp_enqueue_script( 'mwb-occfw-onboarding-select2-js', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/select-2/one-click-checkout-for-woocommerce-select2.js', array( 'jquery' ), '1.0.0', false );
 
-			wp_enqueue_script( 'mwb-mwocc-metarial-js', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'package/lib/material-design/material-components-web.min.js', array(), time(), false );
-			wp_enqueue_script( 'mwb-mwocc-metarial-js2', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'package/lib/material-design/material-components-v5.0-web.min.js', array(), time(), false );
-			wp_enqueue_script( 'mwb-mwocc-metarial-lite', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'package/lib/material-design/material-lite.min.js', array(), time(), false );
+			wp_enqueue_script( 'mwb-occfw-metarial-js', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/material-design/material-components-web.min.js', array(), time(), false );
+			wp_enqueue_script( 'mwb-occfw-metarial-js2', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/material-design/material-components-v5.0-web.min.js', array(), time(), false );
+			wp_enqueue_script( 'mwb-occfw-metarial-lite', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/material-design/material-lite.min.js', array(), time(), false );
 
-			wp_enqueue_script( 'mwb-mwocc-onboarding-scripts', MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_URL . 'onboarding/js/mwb-woocommerce-one-click-checkout-onboarding.js', array( 'jquery', 'mwb-mwocc-onboarding-select2-js', 'mwb-mwocc-metarial-js', 'mwb-mwocc-metarial-js2', 'mwb-mwocc-metarial-lite' ), time(), true );
+			wp_enqueue_script( 'mwb-occfw-onboarding-scripts', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'onboarding/js/one-click-checkout-for-woocommerce-onboarding.js', array( 'jquery', 'mwb-occfw-onboarding-select2-js', 'mwb-occfw-metarial-js', 'mwb-occfw-metarial-js2', 'mwb-occfw-metarial-lite' ), time(), true );
 
 			$mwocc_current_slug = ! empty( explode( '/', plugin_basename( __FILE__ ) ) ) ? explode( '/', plugin_basename( __FILE__ ) )[0] : '';
 			wp_localize_script(
-				'mwb-mwocc-onboarding-scripts',
-				'mwb_mwocc_onboarding',
+				'mwb-occfw-onboarding-scripts',
+				'mwb_occfw_onboarding',
 				array(
 					'ajaxurl'       => admin_url( 'admin-ajax.php' ),
-					'mwocc_auth_nonce'    => wp_create_nonce( 'mwb_mwocc_onboarding_nonce' ),
+					'mwocc_auth_nonce'    => wp_create_nonce( 'mwb_occfw_onboarding_nonce' ),
 					'mwocc_current_screen'    => $pagenow,
 					'mwocc_current_supported_slug'    =>
 					// desc - filter for trial.
-					apply_filters( 'mwb_mwocc_deactivation_supported_slug', array( $mwocc_current_slug ) ),
+					apply_filters( 'mwb_occfw_deactivation_supported_slug', array( $mwocc_current_slug ) ),
 				)
 			);
 		}
 	}
 
 	/**
-	 * Get all valid screens to add scripts and templates for mwb-woocommerce-one-click-checkout.
+	 * Get all valid screens to add scripts and templates for one-click-checkout-for-woocommerce.
 	 *
 	 * @since    1.0.0
 	 */
 	public function mwocc_add_onboarding_popup_screen() {
 		if ( $this->mwocc_valid_page_screen_check() && $this->mwocc_show_onboarding_popup_check() ) {
-			require_once MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_PATH . 'onboarding/templates/mwb-woocommerce-one-click-checkout-onboarding-template.php';
+			require_once ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_PATH . 'onboarding/templates/one-click-checkout-for-woocommerce-onboarding-template.php';
 		}
 	}
 
 	/**
-	 * Get all valid screens to add scripts and templates for mwb-woocommerce-one-click-checkout.
+	 * Get all valid screens to add scripts and templates for one-click-checkout-for-woocommerce.
 	 *
 	 * @since    1.0.0
 	 */
@@ -243,25 +243,25 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 
 		global $pagenow;
 		if ( ! empty( $pagenow ) && 'plugins.php' == $pagenow ) {
-			require_once MWB_WOOCOMMERCE_ONE_CLICK_CHECKOUT_DIR_PATH . 'onboarding/templates/mwb-woocommerce-one-click-checkout-deactivation-template.php';
+			require_once ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_PATH . 'onboarding/templates/one-click-checkout-for-woocommerce-deactivation-template.php';
 		}
 	}
 
 	/**
-	 * Skip the popup for some days of mwb-woocommerce-one-click-checkout.
+	 * Skip the popup for some days of one-click-checkout-for-woocommerce.
 	 *
 	 * @since    1.0.0
 	 */
 	public function mwocc_skip_onboarding_popup() {
 
-		$get_skipped_timstamp = update_option( 'mwb_mwocc_onboarding_data_skipped', time() );
+		$get_skipped_timstamp = update_option( 'mwb_occfw_onboarding_data_skipped', time() );
 		echo json_encode( 'true' );
 		wp_die();
 	}
 
 
 	/**
-	 * Add your mwb-woocommerce-one-click-checkout onboarding form fields.
+	 * Add your one-click-checkout-for-woocommerce onboarding form fields.
 	 *
 	 * @since    1.0.0
 	 */
@@ -297,8 +297,8 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 			 */
 
 			rand() => array(
-				'id' => 'mwb-mwocc-monthly-revenue',
-				'title' => esc_html__( 'What is your monthly revenue?', 'mwb-woocommerce-one-click-checkout' ),
+				'id' => 'mwb-occfw-monthly-revenue',
+				'title' => esc_html__( 'What is your monthly revenue?', 'one-click-checkout-for-woocommerce' ),
 				'type' => 'radio',
 				'description' => '',
 				'name' => 'monthly_revenue_',
@@ -316,14 +316,14 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 			),
 
 			rand() => array(
-				'id' => 'mwb_mwocc_industry_type',
-				'title' => esc_html__( 'What industry defines your business?', 'mwb-woocommerce-one-click-checkout' ),
+				'id' => 'mwb_occfw_industry_type',
+				'title' => esc_html__( 'What industry defines your business?', 'one-click-checkout-for-woocommerce' ),
 				'type' => 'select',
 				'name' => 'industry_type_',
 				'value' => '',
 				'description' => '',
 				'multiple' => 'yes',
-				'placeholder' => esc_html__( 'Industry Type', 'mwb-woocommerce-one-click-checkout' ),
+				'placeholder' => esc_html__( 'Industry Type', 'one-click-checkout-for-woocommerce' ),
 				'required' => 'yes',
 				'class' => '',
 				'options' => array(
@@ -353,73 +353,73 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 			),
 
 			rand() => array(
-				'id' => 'mwb-mwocc-onboard-email',
-				'title' => esc_html__( 'What is the best email address to contact you?', 'mwb-woocommerce-one-click-checkout' ),
+				'id' => 'mwb-occfw-onboard-email',
+				'title' => esc_html__( 'What is the best email address to contact you?', 'one-click-checkout-for-woocommerce' ),
 				'type' => 'email',
 				'description' => '',
 				'name' => 'email',
-				'placeholder' => esc_html__( 'Email', 'mwb-woocommerce-one-click-checkout' ),
+				'placeholder' => esc_html__( 'Email', 'one-click-checkout-for-woocommerce' ),
 				'value' => $current_user_email,
 				'required' => 'yes',
 				'class' => 'mwocc-text-class',
 			),
 
 			rand() => array(
-				'id' => 'mwb-mwocc-onboard-number',
-				'title' => esc_html__( 'What is your contact number?', 'mwb-woocommerce-one-click-checkout' ),
+				'id' => 'mwb-occfw-onboard-number',
+				'title' => esc_html__( 'What is your contact number?', 'one-click-checkout-for-woocommerce' ),
 				'type' => 'text',
 				'description' => '',
 				'name' => 'phone',
 				'value' => '',
-				'placeholder' => esc_html__( 'Contact Number', 'mwb-woocommerce-one-click-checkout' ),
+				'placeholder' => esc_html__( 'Contact Number', 'one-click-checkout-for-woocommerce' ),
 				'required' => 'yes',
 				'class' => '',
 			),
 
 			rand() => array(
-				'id' => 'mwb-mwocc-store-name',
+				'id' => 'mwb-occfw-store-name',
 				'title' => '',
 				'description' => '',
 				'type' => 'hidden',
 				'name' => 'company',
 				'placeholder' => '',
-				'value' => self::$mwb_mwocc_store_name,
+				'value' => self::$mwb_occfw_store_name,
 				'required' => '',
 				'class' => '',
 			),
 
 			rand() => array(
-				'id' => 'mwb-mwocc-store-url',
+				'id' => 'mwb-occfw-store-url',
 				'title' => '',
 				'description' => '',
 				'type' => 'hidden',
 				'name' => 'website',
 				'placeholder' => '',
-				'value' => self::$mwb_mwocc_store_url,
+				'value' => self::$mwb_occfw_store_url,
 				'required' => '',
 				'class' => '',
 			),
 
 			rand() => array(
-				'id' => 'mwb-mwocc-show-counter',
+				'id' => 'mwb-occfw-show-counter',
 				'title' => '',
 				'description' => '',
 				'type' => 'hidden',
 				'placeholder' => '',
-				'name' => 'mwb-mwocc-show-counter',
-				'value' => get_option( 'mwb_mwocc_onboarding_data_sent', 'not-sent' ),
+				'name' => 'mwb-occfw-show-counter',
+				'value' => get_option( 'mwb_occfw_onboarding_data_sent', 'not-sent' ),
 				'required' => '',
 				'class' => '',
 			),
 
 			rand() => array(
-				'id' => 'mwb-mwocc-plugin-name',
+				'id' => 'mwb-occfw-plugin-name',
 				'title' => '',
 				'description' => '',
 				'type' => 'hidden',
 				'placeholder' => '',
 				'name' => 'org_plugin_name',
-				'value' => self::$mwb_mwocc_plugin_name,
+				'value' => self::$mwb_occfw_plugin_name,
 				'required' => '',
 				'class' => '',
 			),
@@ -430,7 +430,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 
 
 	/**
-	 * Add your mwb-woocommerce-one-click-checkout deactivation form fields.
+	 * Add your one-click-checkout-for-woocommerce deactivation form fields.
 	 *
 	 * @since    1.0.0
 	 */
@@ -460,7 +460,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 			 */
 
 			rand() => array(
-				'id' => 'mwb-mwocc-deactivation-reason',
+				'id' => 'mwb-occfw-deactivation-reason',
 				'title' => '',
 				'description' => '',
 				'type' => 'radio',
@@ -481,19 +481,19 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 			),
 
 			rand() => array(
-				'id' => 'mwb-mwocc-deactivation-reason-text',
-				'title' => esc_html__( 'Let us know why you are deactivating ' . self::$mwb_mwocc_plugin_name_label . ' so we can improve the plugin', 'mwb-woocommerce-one-click-checkout' ),
+				'id' => 'mwb-occfw-deactivation-reason-text',
+				'title' => esc_html__( 'Let us know why you are deactivating ' . self::$mwb_occfw_plugin_name_label . ' so we can improve the plugin', 'one-click-checkout-for-woocommerce' ),
 				'type' => 'textarea',
 				'description' => '',
 				'name' => 'deactivation_reason_text',
-				'placeholder' => esc_html__( 'Reason', 'mwb-woocommerce-one-click-checkout' ),
+				'placeholder' => esc_html__( 'Reason', 'one-click-checkout-for-woocommerce' ),
 				'value' => '',
 				'required' => '',
 				'class' => 'mwb-keep-hidden',
 			),
 
 			rand() => array(
-				'id' => 'mwb-mwocc-admin-email',
+				'id' => 'mwb-occfw-admin-email',
 				'title' => '',
 				'description' => '',
 				'type' => 'hidden',
@@ -505,31 +505,31 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 			),
 
 			rand() => array(
-				'id' => 'mwb-mwocc-store-name',
+				'id' => 'mwb-occfw-store-name',
 				'title' => '',
 				'description' => '',
 				'type' => 'hidden',
 				'placeholder' => '',
 				'name' => 'company',
-				'value' => self::$mwb_mwocc_store_name,
+				'value' => self::$mwb_occfw_store_name,
 				'required' => '',
 				'class' => '',
 			),
 
 			rand() => array(
-				'id' => 'mwb-mwocc-store-url',
+				'id' => 'mwb-occfw-store-url',
 				'title' => '',
 				'description' => '',
 				'type' => 'hidden',
 				'name' => 'website',
 				'placeholder' => '',
-				'value' => self::$mwb_mwocc_store_url,
+				'value' => self::$mwb_occfw_store_url,
 				'required' => '',
 				'class' => '',
 			),
 
 			rand() => array(
-				'id' => 'mwb-mwocc-plugin-name',
+				'id' => 'mwb-occfw-plugin-name',
 				'title' => '',
 				'description' => '',
 				'type' => 'hidden',
@@ -552,7 +552,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 	 */
 	public function mwocc_send_onboarding_data() {
 
-		check_ajax_referer( 'mwb_mwocc_onboarding_nonce', 'nonce' );
+		check_ajax_referer( 'mwb_occfw_onboarding_nonce', 'nonce' );
 
 		$form_data = ! empty( $_POST['form_data'] ) ? json_decode( sanitize_text_field( wp_unslash( $_POST['form_data'] ) ) ) : '';
 
@@ -562,7 +562,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 
 			foreach ( $form_data as $key => $input ) {
 
-				if ( 'mwb-mwocc-show-counter' == $input->name ) {
+				if ( 'mwb-occfw-show-counter' == $input->name ) {
 					continue;
 				}
 
@@ -613,7 +613,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 
 			if ( ! empty( $formatted_data ) && is_array( $formatted_data ) ) {
 
-				unset( $formatted_data['mwb-mwocc-show-counter'] );
+				unset( $formatted_data['mwb-occfw-show-counter'] );
 
 				$result = $this->mwocc_handle_form_submission_for_hubspot( $formatted_data, $action_type );
 			}
@@ -624,7 +624,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 		}
 
 		if ( ! empty( $action_type ) && 'onboarding' == $action_type ) {
-			 $get_skipped_timstamp = update_option( 'mwb_mwocc_onboarding_data_sent', 'sent' );
+			 $get_skipped_timstamp = update_option( 'mwb_occfw_onboarding_data_sent', 'sent' );
 		}
 
 		echo json_encode( $formatted_data );
@@ -633,7 +633,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 
 
 	/**
-	 * Handle mwb-woocommerce-one-click-checkout form submission.
+	 * Handle one-click-checkout-for-woocommerce form submission.
 	 *
 	 * @param      bool   $submission       The resultant data of the form.
 	 * @param      string $action_type      Type of action.
@@ -662,7 +662,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 
 
 	/**
-	 *  Define mwb-woocommerce-one-click-checkout Onboarding Submission :: Get a form.
+	 *  Define one-click-checkout-for-woocommerce Onboarding Submission :: Get a form.
 	 *
 	 * @param      array  $form_data    form data.
 	 * @param      string $action_type    type of action.
@@ -671,12 +671,12 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 	protected function mwocc_hubwoo_submit_form( $form_data = array(), $action_type = 'onboarding' ) {
 
 		if ( 'onboarding' == $action_type ) {
-			$form_id = self::$mwb_mwocc_onboarding_form_id;
+			$form_id = self::$mwb_occfw_onboarding_form_id;
 		} else {
-			$form_id = self::$mwb_mwocc_deactivation_form_id;
+			$form_id = self::$mwb_occfw_deactivation_form_id;
 		}
 
-		$url = 'submissions/v3/integration/submit/' . self::$mwb_mwocc_portal_id . '/' . $form_id;
+		$url = 'submissions/v3/integration/submit/' . self::$mwb_occfw_portal_id . '/' . $form_id;
 
 		$headers = array(
 			'Content-Type' => 'application/json',
@@ -686,8 +686,8 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 			array(
 				'fields' => $form_data,
 				'context'  => array(
-					'pageUri' => self::$mwb_mwocc_store_url,
-					'pageName' => self::$mwb_mwocc_store_name,
+					'pageUri' => self::$mwb_occfw_store_url,
+					'pageName' => self::$mwb_occfw_store_name,
 					'ipAddress' => $this->mwocc_get_client_ip(),
 				),
 			)
@@ -714,7 +714,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 	 * @param   array  $headers    data that must be included in header for request.
 	 */
 	private function mwocc_hic_post( $endpoint, $post_params, $headers ) {
-		$url      = $this->mwb_mwocc_base_url . $endpoint;
+		$url      = $this->mwb_occfw_base_url . $endpoint;
 		$request  = array(
 			'method'      => 'POST',
 			'timeout'     => 45,
@@ -728,7 +728,7 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 		$response = wp_remote_post( $url, $request );
 		if ( is_wp_error( $response ) ) {
 			$status_code = 500;
-			$response    = esc_html__( 'Unexpected Error Occured', 'mwb-woocommerce-one-click-checkout' );
+			$response    = esc_html__( 'Unexpected Error Occured', 'one-click-checkout-for-woocommerce' );
 			$curl_errors = $response;
 		} else {
 			$response    = wp_remote_retrieve_body( $response );
@@ -774,13 +774,13 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 	 * @since    1.0.0
 	 */
 	public function mwocc_valid_page_screen_check() {
-		$mwb_mwocc_screen  = get_current_screen();
-		$mwb_mwocc_is_flag = false;
-		if ( isset( $mwb_mwocc_screen->id ) && 'makewebbetter_page_mwb_woocommerce_one_click_checkout_menu' == $mwb_mwocc_screen->id ) {
-			$mwb_mwocc_is_flag = true;
+		$mwb_occfw_screen  = get_current_screen();
+		$mwb_occfw_is_flag = false;
+		if ( isset( $mwb_occfw_screen->id ) && 'makewebbetter_page_one_click_checkout_for_woocommerce_menu' == $mwb_occfw_screen->id ) {
+			$mwb_occfw_is_flag = true;
 		}
 
-		return $mwb_mwocc_is_flag;
+		return $mwb_occfw_is_flag;
 	}
 
 	/**
@@ -790,23 +790,23 @@ class Mwb_Woocommerce_One_Click_Checkout_Onboarding_Steps {
 	 */
 	public function mwocc_show_onboarding_popup_check() {
 
-		$mwb_mwocc_is_already_sent = get_option( 'mwb_mwocc_onboarding_data_sent', false );
+		$mwb_occfw_is_already_sent = get_option( 'mwb_occfw_onboarding_data_sent', false );
 
 		// Already submitted the data.
-		if ( ! empty( $mwb_mwocc_is_already_sent ) && 'sent' == $mwb_mwocc_is_already_sent ) {
+		if ( ! empty( $mwb_occfw_is_already_sent ) && 'sent' == $mwb_occfw_is_already_sent ) {
 			return false;
 		}
 
-		$mwb_mwocc_get_skipped_timstamp = get_option( 'mwb_mwocc_onboarding_data_skipped', false );
-		if ( ! empty( $mwb_mwocc_get_skipped_timstamp ) ) {
+		$mwb_occfw_get_skipped_timstamp = get_option( 'mwb_occfw_onboarding_data_skipped', false );
+		if ( ! empty( $mwb_occfw_get_skipped_timstamp ) ) {
 
-			$mwb_mwocc_next_show = strtotime( '+2 days', $mwb_mwocc_get_skipped_timstamp );
+			$mwb_occfw_next_show = strtotime( '+2 days', $mwb_occfw_get_skipped_timstamp );
 
-			$mwb_mwocc_current_time = time();
+			$mwb_occfw_current_time = time();
 
-			$mwb_mwocc_time_diff = $mwb_mwocc_next_show - $mwb_mwocc_current_time;
+			$mwb_occfw_time_diff = $mwb_occfw_next_show - $mwb_occfw_current_time;
 
-			if ( 0 < $mwb_mwocc_time_diff ) {
+			if ( 0 < $mwb_occfw_time_diff ) {
 				return false;
 			}
 		}
