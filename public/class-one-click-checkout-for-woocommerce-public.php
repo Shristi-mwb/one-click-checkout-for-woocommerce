@@ -372,11 +372,10 @@ class One_Click_Checkout_For_Woocommerce_Public {
 	 * @return array
 	 */
 	public function mwocc_autofill_checkoutpage_for_guest_user( $fields ) {
-
 		if ( ! is_user_logged_in() && is_checkout() && isset( $_COOKIE['mwb_wocc_user_cookie'] ) ) {
-			// phpcs:ignore.
-			$mwb_wocc_guest_user_order_details = unserialize( base64_decode( sanitize_text_field( $_COOKIE['mwb_wocc_user_cookie'] ) ) );
 
+			// phpcs:ignore.
+			$mwb_wocc_guest_user_order_details = unserialize( base64_decode( sanitize_text_field( wp_unslash( $_COOKIE['mwb_wocc_user_cookie'] ) ) ) );
 			if ( is_array( $mwb_wocc_guest_user_order_details ) && ! empty( $mwb_wocc_guest_user_order_details ) ) {
 
 				// billing details.

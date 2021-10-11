@@ -852,7 +852,7 @@ class One_Click_Checkout_For_Woocommerce {
 										id="<?php echo esc_attr( $mwocc_component['id'] ); ?>"
 										type="<?php echo esc_attr( $mwocc_component['type'] ); ?>"
 										value="<?php echo ( isset( $mwocc_component['value'] ) ? esc_attr( $mwocc_component['value'] ) : '' ); ?>"
-									<?php echo esc_html( ( 'date' === $mwocc_component['type'] ) ? 'max=' . date( 'Y-m-d', strtotime( date( 'Y-m-d', mktime() ) . ' + 365 day' ) ) . 'min=' . date( 'Y-m-d' ) . '' : '' ); ?>
+									<?php echo esc_html( ( 'date' === $mwocc_component['type'] ) ? 'max=' . gmdate( 'Y-m-d', strtotime( gmdate( 'Y-m-d', mktime() ) . ' + 365 day' ) ) . 'min=' . gmdate( 'Y-m-d' ) . '' : '' ); ?>
 										>
 									</label>
 									<div class="mdc-text-field-helper-line">

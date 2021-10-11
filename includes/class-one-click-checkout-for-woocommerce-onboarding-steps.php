@@ -493,6 +493,19 @@ class One_Click_Checkout_For_Woocommerce_Onboarding_Steps {
 			),
 
 			rand() => array(
+				'id' => 'mwb-occfw-deactivation-reason-text',
+				/* translators: %s: plugin name */
+				'title' => sprintf( esc_html__( ' Let us know why you are deactivating %s so we can improve the plugin', 'one-click-checkout-for-woocommerce' ), self::$mwb_occfw_plugin_name_label ),
+				'type' => 'textarea',
+				'description' => '',
+				'name' => 'deactivation_reason_text',
+				'placeholder' => esc_html__( 'Reason', 'one-click-checkout-for-woocommerce' ),
+				'value' => '',
+				'required' => '',
+				'class' => 'mwb-keep-hidden',
+			),
+
+			rand() => array(
 				'id' => 'mwb-occfw-admin-email',
 				'title' => '',
 				'description' => '',
@@ -729,16 +742,16 @@ class One_Click_Checkout_For_Woocommerce_Onboarding_Steps {
 		if ( is_wp_error( $response ) ) {
 			$status_code = 500;
 			$response    = esc_html__( 'Unexpected Error Occured', 'one-click-checkout-for-woocommerce' );
-			$curl_errors = $response;
+			$res_errors  = $response;
 		} else {
 			$response    = wp_remote_retrieve_body( $response );
 			$status_code = wp_remote_retrieve_response_code( $response );
-			$curl_errors = $response;
+			$res_errors  = $response;
 		}
 		return array(
 			'status_code' => $status_code,
 			'response'    => $response,
-			'errors'      => $curl_errors,
+			'errors'      => $res_errors,
 		);
 	}
 

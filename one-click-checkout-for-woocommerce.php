@@ -22,9 +22,9 @@
  * Domain Path:       /languages
  *
  * WC Requires at least: 4.6
- * WC tested up to:      5.6
+ * WC tested up to:      5.7.1
  * WP Requires at least: 5.1.0
- * WP tested up to:      5.8
+ * WP tested up to:      5.8.1
  * Requires PHP:         7.2 or Higher
  *
  * License:           GNU General Public License v3.0
@@ -105,7 +105,7 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 	 * If the site is multisite and a plugin has been activated on the network and a site is created.
 	 * Then the activation hook will not work. You can executes the activation code using this function. 
 	 *
-	 * @param [type] $new_site
+	 * @param [type] $new_site contain blog object.
 	 * @return void
 	 */
 	function mwocc_standard_plugin_on_create_blog( $new_site ) {
@@ -143,7 +143,10 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 
 	/**
 	 * The code that runs during plugin activation.
-	 * This action is documented in includes/class-one-click-checkout-for-woocommerce-activator.php
+	 * This action is documented in includes/class-one-click-checkout-for-woocommerce-activator.
+	 * 
+	 * @param [type] $network_wide contain blog object.
+	 * @return void
 	 */
 	function mwocc_activate_one_click_checkout_for_woocommerce( $network_wide ) {
 

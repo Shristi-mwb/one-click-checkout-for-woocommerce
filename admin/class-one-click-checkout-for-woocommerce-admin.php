@@ -122,7 +122,7 @@ class One_Click_Checkout_For_Woocommerce_Admin {
 	public function mwocc_options_page() {
 		global $submenu;
 		if ( empty( $GLOBALS['admin_page_hooks']['mwb-plugins'] ) ) {
-			add_menu_page( __( 'MakeWebBetter', 'one-click-checkout-for-woocommerce' ), __( 'MakeWebBetter', 'one-click-checkout-for-woocommerce' ), 'manage_options', 'mwb-plugins', array( $this, 'mwocc_plugins_listing_page' ), ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'admin/image/MWB_Grey-01.svg', 15 );
+			add_menu_page( 'MakeWebBetter', 'MakeWebBetter', 'manage_options', 'mwb-plugins', array( $this, 'mwocc_plugins_listing_page' ), ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'admin/image/MWB_Grey-01.svg', 15 );
 			$mwocc_menus =
 			// desc - filter for trial.
 			apply_filters( 'mwb_add_plugins_menus_array', array() );
