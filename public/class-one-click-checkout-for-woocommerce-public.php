@@ -109,8 +109,24 @@ class One_Click_Checkout_For_Woocommerce_Public {
 			if ( ! empty( $mwb_woo_product_button_allowed[0] ) && in_array( $product->get_id(), $mwb_woo_product_button_allowed[0] ) ) {
 				?>
 				<div class="mwb_woo_one_click_checkout_shop_wrapper">
-					<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_shop button alt" value="<?php if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) { echo esc_html( $mwb_button_text ); } else { esc_html_e( 'Buy Now', 'one-click-checkout-for-woocommerce' ); } ?>" data-productId="<?php echo esc_attr( $product->get_id() ); ?>" data-productType="<?php echo esc_attr( $product->get_type() ); ?>">
-					<input type="hidden" name="mwb_woo_text_and_background_color" class="mwb_woo_text_and_background_color" data-buttonbackgroundcolor="<?php if ( isset( $mwb_button_back_color ) && ( '' != $mwb_button_back_color || null != $mwb_button_back_color ) ) { echo esc_html( $mwb_button_back_color ); } ?>" data-textcolor="<?php if( isset( $mwb_button_text_color ) && ( '' != $mwb_button_text_color || null != $mwb_button_text_color ) ) { echo esc_html( $mwb_button_text_color ); } ?>">
+					<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_shop button alt" 
+					value="<?php
+					if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) {
+						echo esc_html( $mwb_button_text );
+					} else {
+						esc_html_e( 'Buy Now', 'one-click-checkout-for-woocommerce' ); }
+					?>" 
+					data-productId="<?php echo esc_attr( $product->get_id() ); ?>" data-productType="<?php echo esc_attr( $product->get_type() ); ?>">
+					<input type="hidden" name="mwb_woo_text_and_background_color" class="mwb_woo_text_and_background_color" data-buttonbackgroundcolor="
+					<?php
+					if ( isset( $mwb_button_back_color ) && ( '' != $mwb_button_back_color || null != $mwb_button_back_color ) ) {
+						echo esc_html( $mwb_button_back_color ); }
+					?>
+					" data-textcolor="
+				<?php
+				if ( isset( $mwb_button_text_color ) && ( '' != $mwb_button_text_color || null != $mwb_button_text_color ) ) {
+						echo esc_html( $mwb_button_text_color ); }
+				?>">
 				</div>
 				<?php
 			}
@@ -149,8 +165,25 @@ class One_Click_Checkout_For_Woocommerce_Public {
 
 						if ( ! empty( $mwb_woo_product_button_allowed[0] ) && in_array( $product->get_id(), $mwb_woo_product_button_allowed[0] ) ) {
 							?>
-							<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_single button alt" value="<?php if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) { echo esc_html( $mwb_button_text ); } else { esc_html_e( 'Buy Now', 'one-click-checkout-for-woocommerce' ); } ?>" data-productId="<?php echo esc_html( $product->get_id() ); ?>" data-productType="<?php echo esc_html( $product->get_type() ); ?> ">
-							<input type="hidden" name="mwb_woo_text_and_background_color" class="mwb_woo_text_and_background_color" data-buttonbackgroundcolor="<?php if ( isset( $mwb_button_back_color ) && ( '' != $mwb_button_back_color || null != $mwb_button_back_color ) ) { echo esc_html( $mwb_button_back_color ); } ?>" data-textcolor="<?php if( isset( $mwb_button_text_color ) && ( '' != $mwb_button_text_color || null != $mwb_button_text_color ) ) { echo esc_html( $mwb_button_text_color ); } ?>">
+							<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_single button alt" 
+							value="<?php
+							if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) {
+								echo esc_html( $mwb_button_text );
+							} else {
+								esc_html_e( 'Buy Now', 'one-click-checkout-for-woocommerce' ); }
+							?>"
+							data-productId="<?php echo esc_html( $product->get_id() ); ?>" data-productType="<?php echo esc_html( $product->get_type() ); ?> ">
+							<input type="hidden" name="mwb_woo_text_and_background_color" class="mwb_woo_text_and_background_color" data-buttonbackgroundcolor="
+							<?php
+							if ( isset( $mwb_button_back_color ) && ( '' != $mwb_button_back_color || null != $mwb_button_back_color ) ) {
+								echo esc_html( $mwb_button_back_color ); }
+							?>
+							" data-textcolor="
+							<?php
+							if ( isset( $mwb_button_text_color ) && ( '' != $mwb_button_text_color || null != $mwb_button_text_color ) ) {
+								echo esc_html( $mwb_button_text_color ); }
+							?>
+							">
 							<?php
 						}
 					} elseif ( 'variable' === $product->get_type() ) {
@@ -162,14 +195,30 @@ class One_Click_Checkout_For_Woocommerce_Public {
 						}
 						if ( ! empty( $mwb_woo_product_button_allowed[0] ) && in_array( $product->get_id(), $mwb_woo_product_button_allowed[0] ) ) {
 							?>
-							<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_single_variable button alt" value="<?php if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) { echo esc_html( $mwb_button_text ); } else { esc_html_e( 'Buy Now', 'one-click-checkout-for-woocommerce' ); } ?>" data-productId="<?php echo esc_html( $product->get_id() ); ?>" data-productType="<?php echo esc_html( $product->get_type() ); ?> ">
-							<input type="hidden" name="mwb_woo_text_and_background_color" class="mwb_woo_text_and_background_color" data-buttonbackgroundcolor="<?php if ( isset( $mwb_button_back_color ) && ( '' != $mwb_button_back_color || null != $mwb_button_back_color ) ) { echo esc_html( $mwb_button_back_color ); } ?>" data-textcolor="<?php if( isset( $mwb_button_text_color ) && ( '' != $mwb_button_text_color || null != $mwb_button_text_color ) ) { echo esc_html( $mwb_button_text_color ); } ?>">
+							<input type="button" name="mwb_woo_one_click_checkout_user_button" id="mwb_woo_one_click_checkout_user_button" class="mwb_woo_one_click_checkout_user_buynow_single_variable button alt" 
+							value="<?php
+							if ( isset( $mwb_button_text ) && ( '' != $mwb_button_text || null != $mwb_button_text ) ) {
+								echo esc_html( $mwb_button_text );
+							} else {
+								esc_html_e( 'Buy Now', 'one-click-checkout-for-woocommerce' ); }
+							?>"
+							data-productId="<?php echo esc_html( $product->get_id() ); ?>" data-productType="<?php echo esc_html( $product->get_type() ); ?> ">
+							<input type="hidden" name="mwb_woo_text_and_background_color" class="mwb_woo_text_and_background_color" data-buttonbackgroundcolor="
+							<?php
+							if ( isset( $mwb_button_back_color ) && ( '' != $mwb_button_back_color || null != $mwb_button_back_color ) ) {
+								echo esc_html( $mwb_button_back_color ); }
+							?>
+							" data-textcolor="
+							<?php
+							if ( isset( $mwb_button_text_color ) && ( '' != $mwb_button_text_color || null != $mwb_button_text_color ) ) {
+								echo esc_html( $mwb_button_text_color ); }
+							?>">
 							<?php
 						}
 						?>
 					</div>
-					<?php
-				}
+						<?php
+					}
 			}
 		}
 	}
@@ -249,14 +298,14 @@ class One_Click_Checkout_For_Woocommerce_Public {
 				}
 
 				return $mwb_woo_product_button_allowed;
-			} elseif ( ( is_array( $mwb_woo_one_click_checkout_product_settings['included_product'] ) && ! empty( $mwb_woo_one_click_checkout_product_settings['included_product'] ) ) && ( is_array($mwb_woo_one_click_checkout_product_settings['excluded_product'] ) && ! empty( $mwb_woo_one_click_checkout_product_settings['excluded_product'] ) ) ) {
+			} elseif ( ( is_array( $mwb_woo_one_click_checkout_product_settings['included_product'] ) && ! empty( $mwb_woo_one_click_checkout_product_settings['included_product'] ) ) && ( is_array( $mwb_woo_one_click_checkout_product_settings['excluded_product'] ) && ! empty( $mwb_woo_one_click_checkout_product_settings['excluded_product'] ) ) ) {
 
 				if ( in_array( $product->get_id(), $mwb_woo_one_click_checkout_product_settings['included_product'] ) ) {
 
 					$mwb_woo_product_button_allowed[] = $product->get_id();
 
 				} elseif ( is_array( $mwb_woo_one_click_checkout_product_settings['categories'] ) && ! empty( $mwb_woo_one_click_checkout_product_settings['categories'] ) ) {
-					
+
 					$product_term = get_the_terms( $product->get_id(), 'product_cat' );
 
 					if ( isset( $product_term ) && ! empty( $product_term ) ) {
@@ -312,53 +361,48 @@ class One_Click_Checkout_For_Woocommerce_Public {
 					'mwb_wocc_user_order_id'         => $order->get_id(),
 					'mwb_wocc_user_billing_address'  => $order_data['billing'],
 					'mwb_wocc_user_shipping_address' => $order_data['shipping'],
-					'mwb_wocc_payment_method_used'	 => $order_data['payment_method']
+					'mwb_wocc_payment_method_used'   => $order_data['payment_method'],
 				);
 
 				if ( ! isset( $_COOKIE['mwb_wocc_user_cookie'] ) ) {
 
 					if ( isset( $mwb_cookie_method ) && 'day' === $mwb_cookie_method ) {
 
-						if ( isset( $mwb_cookie_time) && ( '' != $mwb_cookie_time || null != $mwb_cookie_time ) ) {
+						if ( isset( $mwb_cookie_time ) && ( '' != $mwb_cookie_time || null != $mwb_cookie_time ) ) {
 
-							setcookie( 'mwb_wocc_user_cookie', base64_encode( serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * $mwb_cookie_time ), '/' );
-
+							setcookie( 'mwb_wocc_user_cookie', wp_json_encode( maybe_serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * $mwb_cookie_time ), '/' );
 						} else {
-							setcookie( 'mwb_wocc_user_cookie', base64_encode( serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * 365 ), '/' );
+							setcookie( 'mwb_wocc_user_cookie', wp_json_encode( maybe_serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * 365 ), '/' );
 						}
-
 					} elseif ( isset( $mwb_cookie_method ) && 'week' === $mwb_cookie_method ) {
 
 						if ( isset( $mwb_cookie_time ) && ( '' != $mwb_cookie_time || null != $mwb_cookie_time ) ) {
 
-							setcookie( 'mwb_wocc_user_cookie', base64_encode( serialize( $mwb_wocc_guest_user_all_data ) ),time() + ( 86400 * ( 7 * $mwb_cookie_time ) ), '/' );
+							setcookie( 'mwb_wocc_user_cookie', wp_json_encode( maybe_serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * ( 7 * $mwb_cookie_time ) ), '/' );
 
 						} else {
-							setcookie( 'mwb_wocc_user_cookie', base64_encode( serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * 365 ), '/' );
+							setcookie( 'mwb_wocc_user_cookie', wp_json_encode( maybe_serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * 365 ), '/' );
 						}
-
 					} elseif ( isset( $mwb_cookie_method ) && 'month' === $mwb_cookie_method ) {
 
 						if ( isset( $mwb_cookie_time ) && ( '' != $mwb_cookie_time || null != $mwb_cookie_time ) ) {
 
-							setcookie( 'mwb_wocc_user_cookie', base64_encode( serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * ( 30 * $mwb_cookie_time ) ), '/' );
+							setcookie( 'mwb_wocc_user_cookie', wp_json_encode( maybe_serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * ( 30 * $mwb_cookie_time ) ), '/' );
 
 						} else {
-							setcookie( 'mwb_wocc_user_cookie', base64_encode( serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * 365 ), '/' );
+							setcookie( 'mwb_wocc_user_cookie', wp_json_encode( maybe_serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * 365 ), '/' );
 						}
-
 					} elseif ( isset( $mwb_cookie_method ) && 'year' === $mwb_cookie_method ) {
 
 						if ( isset( $mwb_cookie_time ) && ( '' != $mwb_cookie_time || null != $mwb_cookie_time ) ) {
 
-							setcookie( 'mwb_wocc_user_cookie', base64_encode( serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * ( 365 * $mwb_cookie_time ) ), '/' );
+							setcookie( 'mwb_wocc_user_cookie', wp_json_encode( maybe_serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * ( 365 * $mwb_cookie_time ) ), '/' );
 
 						} else {
-							setcookie( 'mwb_wocc_user_cookie', base64_encode( serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * 365 ), '/' );
+							setcookie( 'mwb_wocc_user_cookie', wp_json_encode( maybe_serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * 365 ), '/' );
 						}
-
 					} else {
-						setcookie( 'mwb_wocc_user_cookie', base64_encode( serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * 365 ), '/' );
+						setcookie( 'mwb_wocc_user_cookie', wp_json_encode( maybe_serialize( $mwb_wocc_guest_user_all_data ) ), time() + ( 86400 * 365 ), '/' );
 					}
 				}
 			}
@@ -374,8 +418,7 @@ class One_Click_Checkout_For_Woocommerce_Public {
 	public function mwocc_autofill_checkoutpage_for_guest_user( $fields ) {
 		if ( ! is_user_logged_in() && is_checkout() && isset( $_COOKIE['mwb_wocc_user_cookie'] ) ) {
 
-			// phpcs:ignore.
-			$mwb_wocc_guest_user_order_details = unserialize( base64_decode( sanitize_text_field( wp_unslash( $_COOKIE['mwb_wocc_user_cookie'] ) ) ) );
+			$mwb_wocc_guest_user_order_details = maybe_unserialize( json_decode( sanitize_text_field( wp_unslash( $_COOKIE['mwb_wocc_user_cookie'] ) ) ) );
 			if ( is_array( $mwb_wocc_guest_user_order_details ) && ! empty( $mwb_wocc_guest_user_order_details ) ) {
 
 				// billing details.
