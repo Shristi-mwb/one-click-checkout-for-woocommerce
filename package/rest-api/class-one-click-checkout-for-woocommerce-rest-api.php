@@ -58,7 +58,7 @@ class One_Click_Checkout_For_Woocommerce_Rest_Api {
 	public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
-		$this->version = $version;
+		$this->version     = $version;
 
 	}
 
@@ -77,8 +77,8 @@ class One_Click_Checkout_For_Woocommerce_Rest_Api {
 			'mwocc-route/v1',
 			'/mwocc-dummy-data/',
 			array(
-				'methods'  => WP_REST_Server::CREATABLE,
-				'callback' => array( $this, 'mwocc_default_callback' ),
+				'methods'             => WP_REST_Server::CREATABLE,
+				'callback'            => array( $this, 'mwocc_default_callback' ),
 				'permission_callback' => array( $this, 'mwocc_default_permission_check' ),
 			)
 		);
@@ -110,7 +110,7 @@ class One_Click_Checkout_For_Woocommerce_Rest_Api {
 	public function mwocc_default_callback( $request ) {
 
 		require_once ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_PATH . 'package/rest-api/version1/class-one-click-checkout-for-woocommerce-api-process.php';
-		$mwb_occfw_api_obj = new One_Click_Checkout_For_Woocommerce_Api_Process();
+		$mwb_occfw_api_obj     = new One_Click_Checkout_For_Woocommerce_Api_Process();
 		$mwb_occfw_resultsdata = $mwb_occfw_api_obj->mwocc_default_process( $request );
 		if ( is_array( $mwb_occfw_resultsdata ) && isset( $mwb_occfw_resultsdata['status'] ) && 200 == $mwb_occfw_resultsdata['status'] ) {
 			unset( $mwb_occfw_resultsdata['status'] );

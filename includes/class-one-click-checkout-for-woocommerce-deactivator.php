@@ -29,7 +29,7 @@ class One_Click_Checkout_For_Woocommerce_Deactivator {
 	 * @since 1.0.0
 	 */
 	public static function mwocc_woocommerce_one_click_checkout_deactivate() {
-		
+
 	}
 
 }

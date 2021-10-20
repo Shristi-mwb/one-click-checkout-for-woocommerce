@@ -121,7 +121,7 @@ class One_Click_Checkout_For_Woocommerce_Common {
 						}
 					} elseif ( 'variable' === $product->get_type() ) {
 
-						$mwb_woo_variation_id   = ! empty( $_POST['mwb_woo_variation_id'] ) ? sanitize_text_field( wp_unslash( $_POST['mwb_woo_variation_id'] ) ) : '';
+						$mwb_woo_variation_id = ! empty( $_POST['mwb_woo_variation_id'] ) ? sanitize_text_field( wp_unslash( $_POST['mwb_woo_variation_id'] ) ) : '';
 						// phpcs:ignore.
 						$product_all_variations = $product->get_available_variations();
 

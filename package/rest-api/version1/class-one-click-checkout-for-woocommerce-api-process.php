@@ -48,7 +48,7 @@ if ( ! class_exists( 'One_Click_Checkout_For_Woocommerce_Api_Process' ) ) {
 			// Write your custom code here.
 
 			$mwb_occfw_rest_response['status'] = 200;
-			$mwb_occfw_rest_response['data'] = $mwocc_request->get_headers();
+			$mwb_occfw_rest_response['data']   = $mwocc_request->get_headers();
 			return $mwb_occfw_rest_response;
 		}
 	}

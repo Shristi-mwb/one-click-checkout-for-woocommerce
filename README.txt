@@ -1,112 +1,108 @@
-=== One Click Checkout For WooCommerce ===
+===  One Click Checkout For WooCommerce ===
 Contributors: makewebbetter
-Tags: comments, spam
-Requires at least: 4.6
-Tested up to: 4.9.5
+Donate link:  https://makewebbetter.com/
+Tags: one click, checkout, instant checkout, checkout flow, single click, add to cart, one-click buying, one-click ordering
+Requires at least: 5.1.0
+Tested up to: 5.8.1
+WC requires at least: 4.6
+WC tested up to: 5.7.1
 Stable tag: 1.0.0
-License: GNU General Public License v3.0
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Requires PHP: 7.2 or higher
+License: GNU General Public License v3.0 
+License URI: http://www.gnu.org/licenses/gpl-3.0.html 
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+One Click Checkout WooCommerce helps customers place orders in a single click, saving time as they are directed to the Checkout page dodging the option of ‘Add to Cart’.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+**Place orders in one click without getting disturbed. Works with the help of a single click and supports WooCommerce one click buying, checkout flow, one-click ordering. Also dodges the option of ‘add to cart’.**
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+One Click Checkout for WooCommerce is designed and developed to help customers place orders in just one click, without getting distracted. This plugin is an absolute time saver. The customers are immediately directed to the checkout page skipping the option of ‘Add to Cart’. 
 
-A few notes about the sections above:
+Merchants engaged in the sales of both physical and digital products can make use of this plugin. The Checkout page bears the pre-conceived customer information. It decreases the struggles of manually adding billing and shipping information as it save’s the relevant information during registration. 
 
-*   "Contributors" is a comma separated list of people who have contributed for this plugin
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+== Features of One Click Checkout for WooCommerce ==
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
+* The merchant has two options, either the One Click Checkout button will be shown on the shop page or a single page.
+* An option to change the font and color of the button is also available.
+* It provides customizable settings for various options like:
+ - Select time frame for Cookies
+ - Add or Remove Products 
+* Make the One Click Checkout button visible
+* Helps customers dodge the cart option and move to the Checkout page directly.
+* Decreases the struggles of manually adding the shipping and billing information.
+* Saves all the relevant information at the time of registration which helps save time.
+* This plugin works only after the customer has placed their very first order. 
+* The admin can either add or remove the ‘Buy Now’ button from both the selected products or categories
+* It helps generate revenue by simplifying the checkout process.
+* The admin gets full control over the customization of different settings.
 
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+== PLUGIN MEETS YOUR REQUIREMENT, SO ==
+[*Download Now !!*](https://downloads.wordpress.org/plugin/one-click-checkout-for-woocommerce.zip)
+Visit [**One Click Checkout For WooCommerce Documentation**](https://docs.makewebbetter.com/mwb-woocommerce-one-click-checkout/?utm_source=MWB-one-click-checkout-org&utm_medium=MWB-org-page&utm_campaign=documentation-org)
+
+
+== Salient Features One Click Checkout for WooCommerce Plugin ==
+
+**1)** **Direct Checkout**
+One Click Checkout for WooCommerce helps customers directly move to the checkout page skipping the cart process.
+
+**2)** **Customizable Settings**
+One Click Checkout for WooCommerce provides various customization options. The customers can add or remove products, make the button visible, change the font and color of the button, etc. 
+
+**3)** **Reduction in Cart Abandonment**
+As the customers are directed to the checkout page straight away and everything happens so quick chances of cart abandonment is less and customers are more likely to purchase the product. 
+
+ [**Free demo of One Click Checkout for WooCommerce**](https://demo.makewebbetter.com/one-click-checkout-for-woocommerce/?utm_source=one-click-checkout-org&utm_medium=MWB-ORG-Page&utm_campaign=MWB-free-demo)
+
+
+== SUPPORT ==
+
+If you need support or have any question then kindly use our online chat window [here](https://makewebbetter.com/?utm_source=one-click-checkout-org&utm_medium=MWB-org-page&utm_campaign=one-click-checkout-chat) or  connect with us then or  connect with us then [**Generate a Ticket**](https://makewebbetter.com/submit-query/?utm_source=one-click-checkout-org&utm_medium=MWB-org-page&utm_campaign=one-click-checkout-ticket)
+
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+= Automatic installation =
 
-e.g.
+Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't need to leave your web browser. To do an automatic install of One Click Checkout for WooCommerce, log in to your WordPress dashboard, navigate to the Plugins menu, and click Add New.
 
-1. Upload the `one-click-checkout-for-woocommerce` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
+In the search field type "One Click Checkout for WooCommerce" and click Search Plugins. Once you've found our plugin you can view details about it such as the point release, rating, and description. Most importantly, of course, you can install it by simply clicking "Install Now".
+
+= Manual installation =
+
+The manual installation method involves downloading our One Click Checkout for WooCommerce and uploading it to your webserver via your favorite FTP application. The WordPress contains [instructions on how to do this here](https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation).
+
+= Updating =
+
+Automatic updates should work like a charm; as always though, ensure you backup your site just in case.
+
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= Can we show the checkout button on the shop page? =
+Yes, the admin can show the checkout button on the shop page. For this please Go to the plugin settings>> General settings>> Show Checkout Button On Shop Page.
 
-An answer to that question.
+= Is there any option so that we can set the checkout button name? =
+Yes, Admin can set the checkout button name according to their need. Please go to the General settings>>Enter Checkout Button Name and save.
 
-= What about foo bar? =
+= My question is not listed? =
 
-Answer to foo bar dilemma.
+Please visit the [MakeWebBetter Knowledgebase](https://support.makewebbetter.com/wordpress-plugins-knowledge-base/category/one-click-checkout-for-woocommerce/?utm_source=one-click-checkout-kb&utm_medium=org-page&utm_campaign=kb-org-page) and for more details visit [**One Click Checkout For WooCommerce Documentation**](https://docs.makewebbetter.com/mwb-woocommerce-one-click-checkout/?utm_source=MWB-one-click-checkout-org&utm_medium=MWB-org-page&utm_campaign=documentation-org)
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. General Setting of One Click Checkout for WooCommerce
+2. Product Option
 
 == Changelog ==
 
-= 1.0 =
-* A change since the previous version.
-* Another change.
+= 1.0.0 - RELEASED ON 18 October 2021 =
 
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
+* First version
 
 == Upgrade Notice ==
 
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
+= 1.0.0 - RELEASED ON 18 October 2021 =
 
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+* First version
