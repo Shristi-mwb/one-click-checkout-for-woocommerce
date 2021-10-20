@@ -530,15 +530,10 @@ class One_Click_Checkout_For_Woocommerce {
 		// Get the PHP maximum execution time.
 		$mwocc_system_status['php_max_execution_time'] = function_exists( 'ini_get' ) ? ini_get( 'max_execution_time' ) : __( 'N/A (ini_get function does not exist)', 'one-click-checkout-for-woocommerce' );
 
-		// Get outgoing IP address.
-		global $wp_filesystem;
-		WP_Filesystem();
-		$file_data = $wp_filesystem->get_contents( 'http://ipecho.net/plain' );
+		$mwocc_system_status['outgoing_ip'] = function_exists( 'mwocc_file_get_content' ) ? mwocc_file_get_content( 'http://ipecho.net/plain' ) : __( 'N/A (mwocc_file_get_content function does not exist)', 'one-click-checkout-for-woocommerce' );
 
-		$mwocc_system_status['outgoing_ip'] = ! empty( $file_data ) ? $file_data : esc_html__( 'N/A (File data not set.)', 'one-click-checkout-for-woocommerce' );
-		$mwocc_system_data['php']           = $mwocc_system_status;
-		$mwocc_system_data['wp']            = $mwocc_wordpress_status;
-
+		$mwocc_system_data['php'] = $mwocc_system_status;
+		$mwocc_system_data['wp']  = $mwocc_wordpress_status;
 		return $mwocc_system_data;
 	}
 

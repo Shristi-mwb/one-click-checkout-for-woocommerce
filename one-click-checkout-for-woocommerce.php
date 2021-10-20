@@ -170,6 +170,18 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 	}
 
 	/**
+	 * This function is used to get user ip address.
+	 *
+	 * @param [string] $url url. 
+	 * @return string
+	 */
+	function mwocc_file_get_content( $url ) {
+		$response = wp_remote_get( $url );
+		$response = wp_remote_retrieve_body( $response );
+		return $response;
+	}
+
+	/**
 	 * The code that runs during plugin deactivation.
 	 * This action is documented in includes/class-one-click-checkout-for-woocommerce-deactivator.php
 	 */

@@ -94,9 +94,7 @@ class One_Click_Checkout_For_Woocommerce_Admin {
 			wp_enqueue_script( 'mwb-occfw-metarial-js', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/material-design/material-components-web.min.js', array(), time(), false );
 			wp_enqueue_script( 'mwb-occfw-metarial-js2', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/material-design/material-components-v5.0-web.min.js', array(), time(), false );
 			wp_enqueue_script( 'mwb-occfw-metarial-lite', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/material-design/material-lite.min.js', array(), time(), false );
-			wp_enqueue_script( 'mwb-occfw-datatable', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/datatables.net/js/jquery.dataTables.min.js', array(), time(), false );
-			wp_enqueue_script( 'mwb-occfw-datatable-btn', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/datatables.net/buttons/dataTables.buttons.min.js', array(), time(), false );
-			wp_enqueue_script( 'mwb-occfw-datatable-btn-2', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'package/lib/datatables.net/buttons/buttons.html5.min.js', array(), time(), false );
+
 			wp_register_script( $this->plugin_name . 'admin-js', ONE_CLICK_CHECKOUT_FOR_WOOCOMMERCE_DIR_URL . 'admin/js/one-click-checkout-for-woocommerce-admin.js', array( 'jquery', 'wp-color-picker', 'mwb-occfw-select2', 'mwb-occfw-metarial-js', 'mwb-occfw-metarial-js2', 'mwb-occfw-metarial-lite' ), $this->version, false );
 			wp_localize_script(
 				$this->plugin_name . 'admin-js',
