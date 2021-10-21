@@ -418,7 +418,8 @@ class One_Click_Checkout_For_Woocommerce_Public {
 	public function mwocc_autofill_checkoutpage_for_guest_user( $fields ) {
 		if ( ! is_user_logged_in() && is_checkout() && isset( $_COOKIE['mwb_wocc_user_cookie'] ) ) {
 
-			$mwb_wocc_guest_user_order_details = maybe_unserialize( json_decode( sanitize_text_field( wp_unslash( $_COOKIE['mwb_wocc_user_cookie'] ) ) ) );
+			$mwb_wocc_guest_user_order_details = ! empty( $_COOKIE['mwb_wocc_user_cookie'] ) ? maybe_unserialize( map_deep( json_decode( sanitize_text_field( wp_unslash( $_COOKIE['mwb_wocc_user_cookie'] ) ) ), 'sanitize_text_field' ) ) : '';
+
 			if ( is_array( $mwb_wocc_guest_user_order_details ) && ! empty( $mwb_wocc_guest_user_order_details ) ) {
 
 				// billing details.

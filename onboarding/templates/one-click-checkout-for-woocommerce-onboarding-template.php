@@ -18,9 +18,12 @@ apply_filters( 'mwb_occfw_on_boarding_form_fields', array() );
 ?>
 
 <?php if ( ! empty( $mwocc_onboarding_form_fields ) ) : ?>
-	<div class="mdc-dialog mdc-dialog--scrollable <? echo 
-	//desc - filter for trial.
-	apply_filters('mwb_stand_dialog_classes', 'one-click-checkout-for-woocommerce' )?>">
+	<div class="mdc-dialog mdc-dialog--scrollable 
+	<?php
+	echo // desc - filter for trial.
+	esc_attr( apply_filters( 'mwb_stand_dialog_classes', 'one-click-checkout-for-woocommerce' ) );
+	?>
+	">
 		<div class="mwb-occfw-on-boarding-wrapper-background mdc-dialog__container">
 			<div class="mwb-occfw-on-boarding-wrapper mdc-dialog__surface" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title" aria-describedby="my-dialog-content">
 				<div class="mdc-dialog__content">

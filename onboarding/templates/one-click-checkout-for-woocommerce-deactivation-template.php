@@ -24,9 +24,12 @@ apply_filters( 'mwb_occfw_deactivation_form_fields', array() );
 
 ?>
 <?php if ( ! empty( $mwocc_onboarding_form_deactivate ) ) : ?>
-	<div id="<?php echo esc_attr( $mwb_plugin_onboarding_popup_id ); ?>" class="mdc-dialog mdc-dialog--scrollable <? echo 
-	//desc - filter for trial.
-	apply_filters('mwb_stand_dialog_classes', 'one-click-checkout-for-woocommerce' )?>">
+	<div id="<?php echo esc_attr( $mwb_plugin_onboarding_popup_id ); ?>" class="mdc-dialog mdc-dialog--scrollable 
+		<?php
+		echo // desc - filter for trial.
+		esc_attr( apply_filters( 'mwb_stand_dialog_classes', 'one-click-checkout-for-woocommerce' ) );
+		?>
+	">
 		<div class="mwb-occfw-on-boarding-wrapper-background mdc-dialog__container">
 			<div class="mwb-occfw-on-boarding-wrapper mdc-dialog__surface" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title" aria-describedby="my-dialog-content">
 				<div class="mdc-dialog__content">
@@ -48,9 +51,12 @@ apply_filters( 'mwb_occfw_deactivation_form_fields', array() );
 								<input type="submit" class="mwb-occfw-on-boarding-submit mwb-on-boarding-verify mdc-button mdc-button--raised" value="Send Us">
 							</div>
 							<div class="mwb-occfw-on-boarding-form-no_thanks">
-								<a href="#" id="<?php echo esc_attr( $mwb_plugin_deactivation_id ); ?>" class="<? echo 
-								//desc - filter for trial.
-								apply_filters('mwb_stand_no_thank_classes', 'one-click-checkout-for-woocommerce-no_thanks' )?> mdc-button"><?php esc_html_e( 'Skip and Deactivate Now', 'one-click-checkout-for-woocommerce' ); ?></a>
+								<a href="#" id="<?php echo esc_attr( $mwb_plugin_deactivation_id ); ?>" class="
+									<?php
+									echo // desc - filter for trial.
+									esc_attr( apply_filters( 'mwb_stand_no_thank_classes', 'one-click-checkout-for-woocommerce-no_thanks' ) );
+									?>
+								 mdc-button"><?php esc_html_e( 'Skip and Deactivate Now', 'one-click-checkout-for-woocommerce' ); ?></a>
 							</div>
 						</div>
 					</form>

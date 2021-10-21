@@ -103,7 +103,7 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 
 	/**
 	 * If the site is multisite and a plugin has been activated on the network and a site is created.
-	 * Then the activation hook will not work. You can executes the activation code using this function. 
+	 * Then the activation hook will not work. You can executes the activation code using this function.
 	 *
 	 * @param [type] $new_site contain blog object.
 	 * @return void
@@ -122,7 +122,7 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 			require_once plugin_dir_path( __FILE__ ) . 'includes/class-one-click-checkout-for-woocommerce-activator.php';
 			restore_current_blog();
 		}
- 
+
 	}
 	add_action( 'wp_initialize_site', 'mwocc_standard_plugin_on_create_blog', 900 );
 
@@ -144,12 +144,11 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 	/**
 	 * The code that runs during plugin activation.
 	 * This action is documented in includes/class-one-click-checkout-for-woocommerce-activator.
-	 * 
+	 *
 	 * @param [type] $network_wide contain blog object.
 	 * @return void
 	 */
 	function mwocc_activate_one_click_checkout_for_woocommerce( $network_wide ) {
-
 
 		include_once plugin_dir_path( __FILE__ ) . 'includes/class-one-click-checkout-for-woocommerce-activator.php';
 		One_Click_Checkout_For_Woocommerce_Activator::mwocc_woocommerce_one_click_checkout_activate( $network_wide );
@@ -172,7 +171,7 @@ if ( true === $mwocc_plugin_activation['status'] ) {
 	/**
 	 * This function is used to get user ip address.
 	 *
-	 * @param [string] $url url. 
+	 * @param [string] $url url.
 	 * @return string
 	 */
 	function mwocc_file_get_content( $url ) {
