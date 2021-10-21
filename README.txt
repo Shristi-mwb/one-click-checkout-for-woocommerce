@@ -5,7 +5,7 @@ Tags: one click, checkout, instant checkout, checkout flow, single click, add to
 Requires at least: 5.1.0
 Tested up to: 5.8.1
 WC requires at least: 4.6
-WC tested up to: 5.7.1
+WC tested up to: 5.8.0
 Stable tag: 1.0.0
 Requires PHP: 7.2 or higher
 License: GNU General Public License v3.0 
@@ -97,12 +97,12 @@ Please visit the [MakeWebBetter Knowledgebase](https://support.makewebbetter.com
 
 == Changelog ==
 
-= 1.0.0 - RELEASED ON 18 October 2021 =
+= 1.0.0 - RELEASED ON 21 October 2021 =
 
 * First version
 
 == Upgrade Notice ==
 
-= 1.0.0 - RELEASED ON 18 October 2021 =
+= 1.0.0 - RELEASED ON 21 October 2021 =
 
 * First version
